@@ -1,0 +1,861 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+    <interface name="org.mkiol.Speech">
+        <!--
+            State:
+
+            State of the service.
+            Valid states: 0 = Unknown, 1 = Not Configured, 2 = Busy,
+                          3 = Idle, 4 = Listening Manual, 5 = Listening Auto,
+                          6 = Transcribing File, 7 = Listening One-sentence,
+                          8 = Playing speech, 9 = Writing speech synthesis to file,
+                          10 = Translating, 11 = Repairing text
+            Unrecognized states should be considered equal to Unknown.
+        -->
+        <property name="State" type="i" access="read" />
+
+        <!--
+            StatePropertyChanged:
+            @status: new value of State property
+
+            Emitted whenever State property changes.
+        -->
+        <signal name="StatePropertyChanged">
+          <arg name="state" type="i" direction="out" />
+        </signal>
+
+        <!--
+            TaskState:
+
+            An indicator of state of current task.
+            Valid states: 0 = Idle, 1 = Speech Detected,
+                          2 = Processing, 3 = Initializing,
+                          4 = Playing Speech, 5 = Speech Paused,
+                          6 = Cancelling.
+            When state is 4 or 7 (Listening Manual, Listening One-sentence) task state
+            is never 0.
+        -->
+        <property name="TaskState" type="i" access="read" />
+
+        <!--
+            TaskStatePropertyChanged:
+            @taskState: new value of TaskState property
+
+            Emitted whenever TaskState property changes.
+        -->
+        <signal name="TaskStatePropertyChanged">
+          <arg name="taskState" type="i" direction="out" />
+        </signal>
+
+        <!--
+            DefaultSttLang:
+
+            An id of language which is default for STT tasks.
+            The default STT language is used when @lang is empty in StartListen or
+            TranscribeFile methods.
+        -->
+        <property name="DefaultSttLang" type="s" access="readwrite" />
+
+        <!--
+            DefaultSttLangPropertyChanged:
+            @lang: new value of DefaultSttLang property
+
+            Emitted whenever DefaultSttLang property changes.
+        -->
+        <signal name="DefaultSttLangPropertyChanged">
+          <arg name="lang" type="s" direction="out" />
+        </signal>
+
+        <!--
+            DefaultTtsLang:
+
+            An id of language which is default for TTS tasks.
+            The default TTS language is used when @lang is empty in StartListen or
+            TranscribeFile methods.
+        -->
+        <property name="DefaultTtsLang" type="s" access="readwrite" />
+
+        <!--
+            DefaultTtsLangPropertyChanged:
+            @lang: new value of DefaultTtsLang property
+
+            Emitted whenever DefaultTtsLang property changes.
+        -->
+        <signal name="DefaultTtsLangPropertyChanged">
+          <arg name="lang" type="s" direction="out" />
+        </signal>
+
+        <!--
+            DefaultSttModel:
+
+            An id of STT model which is default.
+            The default STT model is used when @lang is empty in StartListen or
+            TranscribeFile methods.
+        -->
+        <property name="DefaultSttModel" type="s" access="readwrite" />
+
+        <!--
+            DefaultSttModelPropertyChanged:
+            @lang: new value of DefaultSttModel property
+
+            Emitted whenever DefaultSttModel property changes.
+        -->
+        <signal name="DefaultSttModelPropertyChanged">
+          <arg name="model" type="s" direction="out" />
+        </signal>
+
+        <!--
+            DefaultTtsModel:
+
+            An id of TTS model which is default.
+            The default TTS model is used when @lang is empty in StartListen or
+            TranscribeFile methods.
+        -->
+        <property name="DefaultTtsModel" type="s" access="readwrite" />
+
+        <!--
+            DefaultTtsModelPropertyChanged:
+            @lang: new value of DefaultTtsModel property
+
+            Emitted whenever DefaultTtsModel property changes.
+        -->
+        <signal name="DefaultTtsModelPropertyChanged">
+          <arg name="model" type="s" direction="out" />
+        </signal>
+
+        <!--
+            DefaultMntLang:
+
+            An language code (ISO 639-1) which is a default for input in translation.
+            The default language is used when @lang is empty in Translate method.
+        -->
+        <property name="DefaultMntLang" type="s" access="readwrite" />
+
+        <!--
+            DefaultMntLangPropertyChanged:
+            @lang: new value of DefaultMntLang property
+
+            Emitted whenever DefaultMntLang property changes.
+        -->
+        <signal name="DefaultMntLangPropertyChanged">
+          <arg name="lang" type="s" direction="out" />
+        </signal>
+
+        <!--
+            DefaultMntOutLang:
+
+            An language code (ISO 639-1) which is a default for output in translation.
+            The default language is used when @out_lang is empty in Translate method.
+        -->
+        <property name="DefaultMntOutLang" type="s" access="readwrite" />
+
+        <!--
+            DefaultMntOutLangPropertyChanged:
+            @lang: new value of DefaultMntOutLang property
+
+            Emitted whenever DefaultMntOutLang property changes.
+        -->
+        <signal name="DefaultMntOutLangPropertyChanged">
+          <arg name="lang" type="s" direction="out" />
+        </signal>
+
+        <!--
+            SttLangs:
+
+            A dict of available STT languages (lang id => array of properties).
+        -->
+        <property name="SttLangs" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+
+        <!--
+            SttLangsChanged:
+            @langs: new value of SttLangs property
+
+            Emitted whenever SttLangs property changes.
+        -->
+        <signal name="SttLangsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="langs" type="a{sv}" direction="out" />
+        </signal>
+
+        <!--
+            SttLangList:
+
+            A list of available STT languages (lang id, name).
+        -->
+        <property name="SttLangList" type="av" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantList"/>
+        </property>
+
+        <!--
+            SttLangListChanged:
+            @langs: new value of SttLangList property
+
+            Emitted whenever SttLangList property changes.
+        -->
+        <signal name="SttLangListChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantList"/>
+          <arg name="langs" type="av" direction="out" />
+        </signal>
+
+        <!--
+            TtsLangs:
+
+            A dict of available TTS languages (lang id => array of properties).
+        -->
+        <property name="TtsLangs" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+
+        <!--
+            TtsLangsChanged:
+            @langs: new value of TtsLangs property
+
+            Emitted whenever TtsLangs property changes.
+        -->
+        <signal name="TtsLangsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="langs" type="a{sv}" direction="out" />
+        </signal>
+
+        <!--
+            MntLangs:
+
+            A dict of available MNT languages (lang id => array of properties).
+        -->
+        <property name="MntLangs" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+
+        <!--
+            MntLangsChanged:
+            @langs: new value of MntLangs property
+
+            Emitted whenever MntLangs property changes.
+        -->
+        <signal name="MntLangsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="langs" type="a{sv}" direction="out" />
+        </signal>
+
+        <!--
+            TtsLangList:
+
+            A list of available TTS languages (lang id, name).
+        -->
+        <property name="TtsLangList" type="av" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantList"/>
+        </property>
+
+        <!--
+            TtsLangListChanged:
+            @langs: new value of TtsLangList property
+
+            Emitted whenever TtsLangList property changes.
+        -->
+        <signal name="TtsLangListChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantList"/>
+          <arg name="langs" type="av" direction="out" />
+        </signal>
+
+        <!--
+            SttTtsLangList:
+
+            A list of available languages both for STT and TTS (lang id, name).
+        -->
+        <property name="SttTtsLangList" type="av" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantList"/>
+        </property>
+
+        <!--
+            SttTtsLangListChanged:
+            @langs: new value of SttTtsLangList property
+
+            Emitted whenever SttTtsLangList property changes.
+        -->
+        <signal name="SttTtsLangListChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantList"/>
+          <arg name="langs" type="av" direction="out" />
+        </signal>
+
+        <!--
+            MntLangList:
+
+            A list of available MNT languages (lang id, name).
+        -->
+        <property name="MntLangList" type="av" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantList"/>
+        </property>
+
+        <!--
+            MntLangListChanged:
+            @langs: new value of MntLangList property
+
+            Emitted whenever MntLangList property changes.
+        -->
+        <signal name="MntLangListChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantList"/>
+          <arg name="langs" type="av" direction="out" />
+        </signal>
+
+        <!--
+            SttModels:
+
+            A dict of available STT models (model id => array of properties).
+        -->
+        <property name="SttModels" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+
+        <!--
+            SttModelsChanged:
+            @models: new value of SttModels property
+
+            Emitted whenever SttModels property changes.
+        -->
+        <signal name="SttModelsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="models" type="a{sv}" direction="out" />
+        </signal>
+
+        <!--
+            TtsModels:
+
+            A dict of available TTS models (model id => array of properties).
+        -->
+        <property name="TtsModels" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+
+        <!--
+            TtsModelsChanged:
+            @models: new value of TtsModels property
+
+            Emitted whenever TtsModels property changes.
+        -->
+        <signal name="TtsModelsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="models" type="a{sv}" direction="out" />
+        </signal>
+
+        <!--
+            CurrentTask:
+
+            Id of task that is currently active. Task id is returned in
+            SttStartListen, SttTranscribeFile, TtsPlaySpeech methods. Task id less than 0
+            idicates idle state.
+        -->
+        <property name="CurrentTask" type="i" access="read" />
+
+        <!--
+            CurrentTaskPropertyChanged:
+            @task: new value of CurrentTask property
+
+            Emitted whenever CurrentTask property changes.
+        -->
+        <signal name="CurrentTaskPropertyChanged">
+          <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttIntermediateTextDecoded:
+            @text: intermediate text that was decoded from speech
+            @lang: language code (ISO 639-1) of decoded @text
+            @task: id of task returned in SttStartListen or SttTranscribeFile call
+
+            Emitted whenever intermediate text was decoded.
+        -->
+        <signal name="SttIntermediateTextDecoded">
+            <arg name="text" type="s" direction="out" />
+            <arg name="lang" type="s" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttTextDecoded:
+            @text: text that was decoded from speech
+            @lang: language code (ISO 639-1) of decoded @text
+            @task: id of task returned in SttStartListen or SttTranscribeFile call
+
+            Emitted whenever text was decoded.
+            When SttTranscribeFile or SttStartListen (@mode set to Automatic) was called,
+            SttTextDecoded signal is emitted everytime when silent is detected in the speech.
+            When SttStartListen (@mode set to Manual) was called, exacly one SttTextDecoded signal
+            is emitted (after SttStopListen call).
+        -->
+        <signal name="SttTextDecoded">
+            <arg name="text" type="s" direction="out" />
+            <arg name="lang" type="s" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttFileTranscribeFinished:
+            @task: id of task returned in SttTranscribeFile call
+
+            Emitted whenever file transcription is completely finished.
+        -->
+        <signal name="SttFileTranscribeFinished">
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            TtsPlaySpeechFinished:
+            @task: id of task returned in TtsPlaySpeech call
+
+            Emitted whenever speech playback is completely finished.
+        -->
+        <signal name="TtsPlaySpeechFinished">
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            TtsSpeechToFileFinished:
+            @files: list of paths to file with speech audio
+            @task: id of task returned in TtsSpeechToFile call
+
+            Emitted whenever speech synthesis is completely finished.
+        -->
+        <signal name="TtsSpeechToFileFinished">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QStringList"/>
+            <arg name="files" type="as" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            TtsPartialSpeechPlaying:
+            @text: portion of requested text which is being played at the moment
+            @task: id of task returned in TtsPlaySpeech call
+
+            Emitted whenever new portion of text is being played. Argument @text might
+            be empty when speech synthesis is not finished.
+
+        -->
+        <signal name="TtsPartialSpeechPlaying">
+            <arg name="text" type="s" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            TtsSpeechToFileProgress:
+            @progress: progress of speech synthesis (0.0 - 1.0)
+            @task: id of task returned in TtsSpeechToFile call
+
+            Emitted whenever speech to file progress changed.
+        -->
+        <signal name="TtsSpeechToFileProgress">
+            <arg name="progress" type="d" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttFileTranscribeProgress:
+            @progress: progress of file transcription (0.0 - 1.0)
+            @task: id of task returned in SttTranscribeFile call
+
+            Emitted whenever file transcription progress changed.
+        -->
+        <signal name="SttFileTranscribeProgress">
+            <arg name="progress" type="d" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            MntTranslateProgress:
+            @progress: progress of translation (0.0 - 1.0)
+            @task: id of task returned in MntTranslate call
+
+            Emitted whenever translate progress changed.
+        -->
+        <signal name="MntTranslateProgress">
+            <arg name="progress" type="d" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            MntTranslateFinished:
+            @in_text: text that should be translated
+            @in_lang: language code (ISO 639-1) of @in_text
+            @out_text: translated text
+            @out_lang: language code (ISO 639-1) of @out_text
+            @task: id of task returned in MntTranslate call
+
+            Emitted whenever translation is completely finished.
+        -->
+        <signal name="MntTranslateFinished">
+            <arg name="in_text" type="s" direction="out" />
+            <arg name="in_lang" type="s" direction="out" />
+            <arg name="out_text" type="s" direction="out" />
+            <arg name="out_lang" type="s" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttGetFileTranscribeProgress:
+            @task: id of task returned in SttTranscribeFile call
+            @progress: progress of file transcription (0.0 - 1.0)
+        -->
+        <method name="SttGetFileTranscribeProgress">
+            <arg name="task" type="i" direction="in" />
+            <arg name="progress" type="d" direction="out" />
+        </method>
+
+        <!--
+            TtsGetSpeechToFileProgress:
+            @task: id of task returned in SttTranscribeFile call
+            @progress: progress of speech synthesis (0.0 - 1.0)
+        -->
+        <method name="TtsGetSpeechToFileProgress">
+            <arg name="task" type="i" direction="in" />
+            <arg name="progress" type="d" direction="out" />
+        </method>
+
+        <!--
+            MntTranslate:
+            @text: text that should be translated
+            @lang: language code (ISO 639-1) of @text
+            @out_lang: language code (ISO 639-1) @text should be translated to
+            @task: returned id of task which will be included in
+                   MntTranslateFinished signal,
+                   @task less than 0 idicates an error
+        -->
+        <method name="MntTranslate">
+            <arg name="text" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_lang" type="s" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            MntTranslate2:
+            @text: text that should be translated
+            @lang: language code (ISO 639-1) of @text
+            @out_lang: language code (ISO 639-1) @text should be translated to
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in
+                   MntTranslateFinished signal,
+                   @task less than 0 idicates an error
+        -->
+        <method name="MntTranslate2">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In3" value="QVariantMap"/>
+            <arg name="text" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_lang" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            MntGetOutLangs:
+            @lang: language code (ISO 639-1) of input language
+            @out_langs: returned a dict of languages (lang id => array of properties)
+                        for translation output
+        -->
+        <method name="MntGetOutLangs">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_langs" type="a{sv}" direction="out" />
+        </method>
+
+        <!--
+            ErrorOccured:
+            @code: 0 = Generic, 1 = Microphone error, 2 = File source error
+                   3 = STT engine, 4 = TTS engine
+
+            Emitted whenever error occurs.
+        -->
+        <signal name="ErrorOccured">
+            <arg name="code" type="i" direction="out" />
+        </signal>
+
+        <!--
+            SttStartListen:
+            @mode: 0 - Automatic, 1 - Manual, 2 - One Sentence
+            @lang: language code (ISO 639-1) or model id
+            @out_lang: Language code (ISO 639-1) language the decoded text
+                       will be translated into. When empty text won't be translated.
+            @task: returned id of task which will be included in
+                   SttIntermediateTextDecoded and SttTextDecoded signals,
+                   @task less than 0 idicates an error
+
+            When @mode is Automatic, SttTextDecoded signal is emitted everytime
+            when silent is detected in the speech. When @mode is Manual or
+            One Sentence, exacly one SttTextDecoded signal is emitted.
+        -->
+        <method name="SttStartListen">
+            <arg name="mode" type="i" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_lang" type="s" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            SttStartListen2:
+            @mode: 0 - Automatic, 1 - Manual, 2 - One Sentence
+            @lang: language code (ISO 639-1) or model id
+            @out_lang: Language code (ISO 639-1) language the decoded text
+                       will be translated into. When empty text won't be translated.
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in
+                   SttIntermediateTextDecoded and SttTextDecoded signals,
+                   @task less than 0 idicates an error
+
+            When @mode is Automatic, SttTextDecoded signal is emitted everytime
+            when silent is detected in the speech. When @mode is Manual or
+            One Sentence, exacly one SttTextDecoded signal is emitted.
+        -->
+        <method name="SttStartListen2">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In3" value="QVariantMap"/>
+            <arg name="mode" type="i" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_lang" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            SttStopListen:
+            @task: id of task returned in SttStartListen call
+            @result: 0 - success, any other value - error
+
+            Stops speech listening. It doesn't break already started
+            speech decoding.
+        -->
+        <method name="SttStopListen">
+            <arg name="task" type="i" direction="in" />
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            SttTranscribeFile:
+            @file: path or URL to audio file
+            @lang: language code (ISO 639-1) or model id
+            @out_lang: Language code (ISO 639-1) language the decoded text
+                       will be translated into. When empty text won't be translated.
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in
+                   SttIntermediateTextDecoded and SttTextDecoded signals,
+                   @task less than 0 idicates an error
+
+            Starts audio file transcription. Result of transcription is
+            reported in SttIntermediateTextDecoded and SttTextDecoded signals.
+            Progress of transcription is included in SttFileTranscribeProgress signal.
+            When file transcription is completely finished (whole file was transcribed),
+            SttFileTranscribeProgress signal is emitted.
+        -->
+        <method name="SttTranscribeFile">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In3" value="QVariantMap"/>
+            <arg name="file" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="out_lang" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsPlaySpeech:
+            @text: text that should be encoded to speech
+            @lang: language code (ISO 639-1) or model id
+            @task: returned id of task which will be included in TtsPlaySpeechFinished signals,
+                   @task less than 0 idicates an error
+
+            Synthesizes speech from given text and plays it.
+        -->
+        <method name="TtsPlaySpeech">
+            <arg name="text" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsPlaySpeech2:
+            @text: text that should be encoded to speech
+            @lang: language code (ISO 639-1) or model id
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in TtsPlaySpeechFinished signals,
+                   @task less than 0 idicates an error
+
+            Synthesizes speech from given text and plays it.
+        -->
+        <method name="TtsPlaySpeech2">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="QVariantMap"/>
+            <arg name="text" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsStopSpeech:
+            @task: id of task returned in TtsPlaySpeech call
+            @result: 0 - success, any other value - error
+
+            Stops speech playing.
+        -->
+        <method name="TtsStopSpeech">
+            <arg name="task" type="i" direction="in" />
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsSpeechToFile:
+            @text: text that should be encoded to speech
+            @lang: language code (ISO 639-1) or model id
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in TtsPlaySpeechFinished signals,
+                   @task less than 0 idicates an error
+
+            Synthesizes speech from given text. Speech audio is saved to wav file.
+            A file path will be returned in TtsSpeechToFileFinished signal.
+        -->
+        <method name="TtsSpeechToFile">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="QVariantMap"/>
+            <arg name="text" type="s" direction="in" />
+            <arg name="lang" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsPauseSpeech:
+            @task: id of task returned in TtsPlaySpeech call
+            @result: 0 - success, any other value - error
+
+            Pauses speech playing.
+        -->
+        <method name="TtsPauseSpeech">
+            <arg name="task" type="i" direction="in" />
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            TtsResumeSpeech:
+            @task: id of task returned in TtsPlaySpeech call
+            @result: 0 - success, any other value - error
+
+            Resumes speech playing.
+        -->
+        <method name="TtsResumeSpeech">
+            <arg name="task" type="i" direction="in" />
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            Cancel:
+            @task: id of task returned in SttStartListen, SttTranscribeFile
+                   TtsPlaySpeech or MntTranslate call
+            @result: 0 - success, any other value - error
+
+            Cancels speech decoding and file transcription.
+        -->
+        <method name="Cancel">
+            <arg name="task" type="i" direction="in" />
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            FeaturesAvailability:
+            @features: returned a dict features (feature id => true/false)
+        -->
+        <method name="FeaturesAvailability">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+            <arg name="features" type="a{sv}" direction="out" />
+        </method>
+
+        <!--
+            FeaturesAvailabilityUpdated:
+
+            Emitted whenever availability of features get updated.
+        -->
+        <signal name="FeaturesAvailabilityUpdated">
+        </signal>
+
+        <!--
+            Reload:
+            @result: 0 - success, any other value - error
+
+            Reload the service. This method should be called after change in
+            model files.
+        -->
+        <method name="Reload">
+            <arg name="result" type="i" direction="out" />
+        </method>
+
+        <!--
+            KeepAliveTask:
+            @task: id of task returned in SttStartListen, SttTranscribeFile,
+                   or TtsPlaySpeech call
+            @timer: number of miliseconds to task kill (0 - means invalid task
+                    or task has been already killed)
+
+            Resets task kill timer. Should be called periodically to keep task
+            active. When timer timeouts, service kills the task.
+        -->
+        <method name="KeepAliveTask">
+            <arg name="task" type="i" direction="in" />
+            <arg name="timer" type="i" direction="out" />
+        </method>
+
+        <!--
+            KeepAliveService:
+            @timer: number of miliseconds to service shutdown
+
+            Resets service self-shutdown timer. Should be called periodically to
+            keep service running. When timer timeouts, service shutdowns.
+        -->
+        <method name="KeepAliveService">
+            <arg name="timer" type="i" direction="out" />
+        </method>
+
+        <!-- private -->
+        <property name="Translations" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+        <property name="TttLangs" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+        <signal name="TttLangsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="langs" type="a{sv}" direction="out" />
+        </signal>
+        <property name="TttModels" type="a{sv}" access="read">
+            <annotation name="org.qtproject.QtDBus.QtTypeName" value="QVariantMap"/>
+        </property>
+        <signal name="TttModelsPropertyChanged">
+          <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+          <arg name="models" type="a{sv}" direction="out" />
+        </signal>
+
+        <!-- ttt experimental api -->
+
+        <!--
+            TttRepairText:
+            @text: input text
+            @options: A dict of options (option-name => option-value).
+            @task: returned id of task which will be included in TttRepairTextFinished signals,
+                   @task less than 0 idicates an error
+
+            Restores the given text.
+        -->
+        <method name="TttRepairText">
+            <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+            <arg name="text" type="s" direction="in" />
+            <arg name="options" type="a{sv}" direction="in" />
+            <arg name="task" type="i" direction="out" />
+        </method>
+
+        <!--
+            TttRepairTextFinished:
+            @text: text after restoration
+            @task: id of task returned in TttRepairText call
+
+            Emitted whenever TttRepairText is finished.
+        -->
+        <signal name="TttRepairTextFinished">
+            <arg name="text" type="s" direction="out" />
+            <arg name="task" type="i" direction="out" />
+        </signal>
+    </interface>
+</node>

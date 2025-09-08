@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2024-2025 Michal Kosciesza -->
+<component type="desktop-application">
+  <id>@info_app_icon_id@</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>@info_license_spdx@</project_license>
+  <developer id="@info_org@">
+    <name>@info_author@</name>
+  </developer>
+  <name>@info_name@</name>
+  <summary>Notes with offline Speech to Text, Text to Speech and Machine Translation</summary>
+  <description>
+    <p>Speech Note let you take, read and translate notes in multiple languages.
+      It uses Speech to Text, Text to Speech and Machine Translation to do so.
+      Text and voice processing take place entirely offline, locally on your
+      computer, without using a network connection. Your privacy is always
+      respected. No data is sent to the Internet.</p>
+  </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#6b94ad</color>
+    <color type="primary" scheme_preference="dark">#0f5d8a</color>
+  </branding>
+  <categories>
+    <category>AudioVideo</category>
+  </categories>
+  <keywords>
+    <keyword>speech</keyword>
+    <keyword>offline</keyword>
+    <keyword>voice</keyword>
+    <keyword>stt</keyword>
+    <keyword>asr</keyword>
+    <keyword>speech-to-text</keyword>
+    <keyword>speech-recognition</keyword>
+    <keyword>tts</keyword>
+    <keyword>text-to-speech</keyword>
+    <keyword>speech-synthesis</keyword>
+    <keyword>machine-translation</keyword>
+    <keyword>translator</keyword>
+    <keyword>subtitles</keyword>
+    <keyword>deepspeech</keyword>
+    <keyword>vosk</keyword>
+    <keyword>whisper</keyword>
+    <keyword>rhvoice</keyword>
+    <keyword>piper</keyword>
+    <keyword>espeak</keyword>
+    <keyword>mbrola</keyword>
+    <keyword>coqui</keyword>
+    <keyword>bergamot</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Speech Note main window</caption>
+      <image>https://gitlab.com/mkiol/dsnote/-/raw/5d8a190c182886f34a1a729bdbf09fd02acaf4e9/desktop/screenshots/speechnote-screenshot-light-notepad.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Speech Note main window (dark theme)</caption>
+      <image>https://gitlab.com/mkiol/dsnote/-/raw/5d8a190c182886f34a1a729bdbf09fd02acaf4e9/desktop/screenshots/speechnote-screenshot-dark-notepad.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Translator mode</caption>
+      <image>https://gitlab.com/mkiol/dsnote/-/raw/5d8a190c182886f34a1a729bdbf09fd02acaf4e9/desktop/screenshots/speechnote-screenshot-light-translator.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Translator mode (dark theme)</caption>
+      <image>https://gitlab.com/mkiol/dsnote/-/raw/5d8a190c182886f34a1a729bdbf09fd02acaf4e9/desktop/screenshots/speechnote-screenshot-dark-translator.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/mkiol/dsnote</url>
+  <url type="bugtracker">https://github.com/mkiol/dsnote/issues</url>
+  <url type="translate">https://app.transifex.com/mkiol/dsnote</url>
+  <url type="donation">https://github.com/mkiol/dsnote#how-to-support</url>
+  <update_contact>dsnote_AT_mkiol.net</update_contact>
+  <launchable type="desktop-id">@info_app_icon_id@.desktop</launchable>
+  <content_rating type="oars-1.1" />
+  <provides>
+      <mediatype>audio/aac</mediatype>
+      <mediatype>audio/mpeg</mediatype>
+      <mediatype>audio/x-mp3</mediatype>
+      <mediatype>audio/ogg</mediatype>
+      <mediatype>audio/vorbis</mediatype>
+      <mediatype>audio/x-vorbis</mediatype>
+      <mediatype>audio/opus</mediatype>
+      <mediatype>audio/x-speex</mediatype>
+      <mediatype>audio/speex</mediatype>
+      <mediatype>audio/wav</mediatype>
+      <mediatype>audio/x-wav</mediatype>
+      <mediatype>audio/flac</mediatype>
+      <mediatype>audio/x-flac</mediatype>
+      <mediatype>audio/mp4</mediatype>
+      <mediatype>audio/x-matroska</mediatype>
+      <mediatype>video/mpeg</mediatype>
+      <mediatype>video/mpeg</mediatype>
+      <mediatype>video/mp4</mediatype>
+      <mediatype>video/ogg</mediatype>
+      <mediatype>video/x-matroska</mediatype>
+      <mediatype>video/webm</mediatype>
+      <mediatype>text/plain</mediatype>
+      <mediatype>application/x-subrip</mediatype>
+  </provides>
+  <releases>
+    <release version="4.8.3" date="2025-08-14">
+      <description>
+      <p>General:</p>
+      <ul>
+      <li>Fix: The model cannot be activated when the license file cannot be downloaded due to an error.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Fix: App crashes when WhisperCpp is used on certain CPUs.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Fix: The Coqui XTTS model license cannot be downloaded.</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>Fix: App crashes when the translator is used on certain CPUs.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.8.2" date="2025-07-27">
+      <description>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>New Piper voices for Argentine Spanish, Hindi, Malayalam and Nepali</li>
+      <li>Fix: Using the Coqui TTS engine causes the app to crash on some platforms.</li>
+      <li>Fix: Crash when the TTS engine generates a corrupted audio file</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>New languages enabled in Whisper: Azerbaijani, Belarusian, Kannada, Malayalam, Tamil</li>
+      </ul>
+      <p>Flatpak:</p>
+      <ul>
+      <li>Downgrade 'numba' Python package to 0.60.0 version</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.8.1" date="2025-06-29">
+      <description>
+      <p>Translator:</p>
+      <ul>
+      <li>Fix: Model download error for Portuguese, Dutch, Persian, Norwegian and Icelandic languages.</li>
+      <li>Updated models with improved accuracy: German to English, Dutch to English, English to Ukrainian,
+          English to Hungarian, English to Catalan, Catalan to English, English to Lithuanian, English to Latvian,
+          English to Slovenian, Slovenian to English, English to Slovak, English to Russian.</li>
+      <li>New models: Azerbaijani to English, Belarusian to English, Bengali to English, Gujarati to English,
+          Hebrew to English, Hindi to English, Kannada to English, Malayalam to English, Malay to English,
+          Albanian to English, Tamil to English.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>New very large 'Vosk' model for German langauge: Tuda-DE Large</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Coqui MMS voices for the following new languages: Kannada, Malayalam, Tamil</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Speech Note has been translated into German language.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.8.0" date="2025-06-19">
+      <description>
+      <p>General:</p>
+      <ul>
+      <li>Case-sensitive matching in 'Rules'.
+          To enable case-sensitive matching in text, use the option 'Case sensitive' in the rule editing form.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Speech Note has been translated into Arabic, Catalan, Spanish, Turkish and French-Canadian languages.</li>
+      <li>Command line option and DBus API for exporting synthesized speech to an audio file instead of playing it aloud.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>New 'CrisperWhisper' model for 'FasterWhisper' engine.
+          CrisperWhisper is designed for fast, precise, and verbatim speech recognition with accurate word-level timestamps.
+          Unlike the original Whisper, which tends to omit disfluencies and follows more of a intended transcription style,
+          CrisperWhisper aims to transcribe every spoken word exactly as it is, including fillers, pauses, stutters and false starts.
+          CrisperWhisper model is enabled only for English and German languages.</li>
+      <li>'KBLab Whisper' models for Swedish.
+          The National Library of Sweden has released fine-tuned STT models trained on its library collections.
+          The models have significantly improved accuracy compared to regular Whisper models.
+          Even "Tiny" model provides decent quality.
+          KBLab models are available as both 'FasterWhisper' and 'WhisperCpp'.</li>
+      <li>Using an existing note as the initial context in decoding.
+          This has the potential to improve transcription quality and reduce 'hallucination' problem.
+          If you observe a degradation in quality, turn off the 'Use note as context' option.</li>
+      <li>Option to pause listening while processing.
+          This option can be useful when 'Listening mode' is 'Always on'.
+          By default, listening continues even when a piece of audio data is being processed.
+          Using this option, you can temporarily pause listening for the duration of processing.</li>
+      <li>Option to play an audible tone when starting and stopping listening</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Kokoro TTS engine.
+          Kokoro is a compact yet powerful open-source multilingual TTS engine.
+          Despite its modest size (trained on less than 100 hours of audio), it delivers impressive results.
+          Unlike other engines with comparable quality, Kokoro offers the advantage of running even on devices without GPUs.
+          Kokoro voices are enabled for: English, Chinese, Japanese, Hindi, Italian, French, Spanish and Portuguese.</li>
+      <li>F5-TTS engine.
+          The F5-TTS provides exceptional voice cloning capabilities.
+          The currently enabled model works with English and Chinese languages.</li>
+      <li>Parler TTS engine. Parler TTS can generate high-quality, natural sounding speech in the style of a given speaker (gender, pitch, speaking style, etc).
+          The speaker's characteristics are defined by a text description (prompt).
+          Parler TTS primarily supports English, but a multilingual model for French, Spanish, Portuguese, Polish, German, Dutch and Italian is also included.</li>
+      <li>S.A.M. TTS engine. S.A.M. is a small speech synthesizer designed for the Commodore 64.
+          It features a robotic voice that evokes a strong sense of nostalgia.
+          The S.A.M. voice is available in English only.</li>
+      <li>'Normalize audio' setting option.
+          Use this option to enable/disable audio volume normalization.</li>
+      <li>New 'Piper' voices for Dutch, Finnish, German and Luxembourgish</li>
+      <li>New 'RHVoice' voice for Spanish</li>
+      <li>Updated 'RHVoice' voice for Czech</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: English to Chinese, English to Arabic, Arabic to English, English to Korean, English to Japanese</li>
+      </ul>
+      <p>Accessibility:</p>
+      <ul>
+      <li>Support for 'Insert into active window' under Wayland.
+          Using 'start-listening-active-window' or 'start-listening-translate-active-window'
+          actions you can directly insert the decoded text into any window which is currently in focus.
+          This feature worked under X11 only but now it is also suppored under Wayland.
+          For actions to work, 'ydotool' daemon must be installed and running.</li>
+      <li>Support for 'Global keyboard shortcuts' under Wayland.
+          Until now, this capability was only available under X11.
+          Now integration with 'XDG Desktop Portal' has been added, making global keyboard shortcuts possible also under Wayland.
+          For shortcuts to work, your desktop enviroment has to support
+          'GlobalShortcuts' interface on 'XDG Desktop Portal' service.</li>
+      </ul>
+      <p>Flatpak:</p>
+      <ul>
+      <li>Python support enabled in 'Tiny' or ARM packages.
+          Python libraries are not included in Tiny or ARM packages, but using the 'Location of Python libraries' option,
+          you can set an external directory that contains the libraries.</li>
+      <li>Flatpak runtime update to version 5.15-24.08</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.7.1" date="2025-01-05">
+      <description>
+      <p>General:</p>
+      <ul>
+      <li>Fix: The application failed to start when the processor did not support AVX CPU extension.</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: Korean to English, Japanese to English</li>
+      <li>Updated models: Chinese to English</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.7.0" date="2024-12-28">
+      <description>
+      <p>General:</p>
+      <ul>
+      <li>Rules for text transformations that can be applied after Speech to Text or before Text to Speech.
+          With Rules, you can easily and flexibly correct errors in decoded text or correct mispronounced words.</li>
+      <li>New modes for inserting text at the cursor position or replacing the current note.
+          To insert text at the cursor position rather than at the end of the note,
+          change 'Text appending mode' option to 'Add at the cursor position' in the settings.
+          When the 'Replace an existing note' option is set, whenever new text is added, it will replace the existing note.</li>
+      <li>DBus API for integration with external applications</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Speech Note has been translated into Slovenian language.</li>
+      <li>Status indication in the system tray icon.
+          When using the system tray icon, statuses such as processing, listening, etc. are presented with an animated tray icon.</li>
+      <li>Models grouped by type in model browser.
+          To improve usability, instead of a list containing models of all types, models are grouped by type in separate tabs.</li>
+      <li>Command line options for printing available or active model.</li>
+      <li>Command line option to print the current status of the application.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Support for Vulkan GPU acceleration in 'WhisperCpp'.
+          Vulkan acceleration enables much faster STT decoding with Intel, AMD or NVIDIA graphics cards.
+          The biggest advantage of Vulkan is that you can use it without installing any GPU acceleration add-ons.</li>
+      <li>New 'Whisper Large Turbo' model for both 'WhisperCpp' and 'FasterWhisper'.
+          Turbo is a finetuned version of a pruned 'Whisper Large-v3'. It's the exact same model,
+          except that the number of decoding layers have reduced. As a result, the model is way faster,
+          at the expense of a minor quality degradation.</li>
+      <li>Simplified engine configuration options. Instead of multiple options, you can now select a Profile,
+          which allows you to change the engine's processing parameters.
+          There are three profiles to choose from: 'Best Performance', 'Best Quality' and 'Custom'.</li>
+      <li>Echo mode. After processing, the decoded text will be immediately read out using the currently set Text to Speech model.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>New 'Piper' voice for Latvian</li>
+      <li>New 'WhisperSpeech Small' model for: English, Italian, German, French, Spanish, Dutch and Portuguese</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: English to Finnish, English to Turkish, English to Swedish, Swedish to English,
+          English to Slovak, English to Indonesian, English to Romanian, English to Greek, Chinese to English</li>
+      <li>Updated models: English to Catalan, English to Russian, English to Ukrainian, English to Czech</li>
+      </ul>
+      <p>Accessibility:</p>
+      <ul>
+      <li>Option to scan special keystrokes when setting keyboard shortcuts (X11 only).
+          If you want to use special keys as shortcuts (so-called multimedia keys),
+          instead of typing their name, you can automatically set the key by pressing it.</li>
+      <li>Keyboard shortcuts enabled for several user interface elements.
+          Elements such as menu items or buttons can be controlled using the keyboard shortcuts.</li>
+      <li>New 'Actions' and global keyboard shortcut to force translation of text in STT:
+          'start-listening-translate', 'start-listening-translate-active-window', 'start-listening-translate-clipboard'.
+          The decoded text is always translated into English when the "translate" action is triggered.
+          This only works when using Whisper models.</li>
+      <li>New 'Action' to read text from the command-line option: 'start-reading-text'.
+          To pass text, use the '--text' option in the command-line interface.</li>
+      </ul>
+      <p>Flatpak:</p>
+      <ul>
+      <li>whisper.cpp update to version 1.7.1</li>
+      <li>PyTorch update to version 2.5.1</li>
+      <li>The Flatpak GPU acceleration add-on for AMD is no longer recommended.
+          Better results can be achieved with Vulkan acceleration, which does not require the add-on.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.6.1" date="2024-08-15">
+      <description>
+      <p>General:</p>
+      <ul>
+      <li>Fix: The application failed to start when the processor did not support the required CPU extension.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Swedish translation has been updated.</li>
+      </ul>
+      <p>Accessibility:</p>
+      <ul>
+      <li>Fix: Special keyboard keys were not supported as a keyboard shortcut.
+          Examples: 'Favorites', 'Launch Mail', 'Refresh', 'Home Page', 'Calculator' and many more...</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: English to Latvian, English to Danish, English to Croatian, English to Slovenian,
+          Indonesian to English, Romanian to English</li>
+      <li>Updated models: English to Hungarian, Czech to English, Greek to English</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.6.0" date="2024-07-28">
+      <description>
+      <p>User Interface:</p>
+      <ul>
+      <li>Speech Note has been translated into Norwegian language.</li>
+      <li>Grouped models.
+          Models that provide multiple sub-models (for example, TTS models that provide different voices)
+          are shown in groups. This makes it easier to find models in the model browser.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>The name of the all Whisper models has been changed to 'WhisperCpp' to better reflect the engine behind them.
+          Whisper is currently supported by the 'WhisperCpp' and 'FasterWhisper' engines.
+          Both engines are optimized to achieve the best performance.</li>
+      <li>Automatic language detection in STT.
+          To automatically detect the language during STT, select one of the models that is in the 'Auto detected'
+          category in the language list.</li>
+      <li>Separate settings for engines.
+          The configuration of each engine has been separated in the settings.
+          You can separately set the parameters for 'WhisperCpp' and 'FasterWhisper'.
+          The new configuration parameters that have been added to the settings are:
+          'Number of simultaneous threads', 'Beam search width',
+          'Audio context size', 'Use Flash Attention'.</li>
+      <li>Quicker decoding with 'WhisperCpp'.
+          Optimization for short sentences has been added to 'WhisperCpp' engine. With it, the speed of STT has doubled!</li>
+      <li>Support for OpenVINO hardware acceleration in 'WhisperCpp.
+          With OpenVINO decoding on CPU is much quicker. If you are not using GPU acceleration,
+          it is recommended to enable OpenVINO in 'WhisperCpp' engine settings.
+          Currently, OpenVINO is enabled only for CPU acceleration.</li>
+      <li>Option for inserting processing statistics.
+          New settings option allows inserting processing related information to the text after decoding,
+          such as processing time and audio length. This can be useful for comparing the performance of different models,
+          engines and their parameters.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Control tags for advance TTS processing.
+          Control tags allow you to dynamically change the speed of synthesized text or add silence between sentences.
+          To use control tags, insert '{speed: 0.5}' or '{silence: 1s}' into the text.
+          For convenience, you can also insert predefined control tags using text context menu 'Insert control tag'.</li>
+      <li>Welsh language. New language is enabled with 'Piper' voice.</li>
+      <li>New 'Piper' voices for Spanish, Italian and English</li>
+      <li>New 'RHVoice' voices for Slovak and Croatian</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>Improved Translator UI.
+          The 'Translate', 'Switch languages' and 'Add' buttons have been
+          placed between text areas which is more convenient.</li>
+      <li>Support for older hardware.
+          Until now, the translator did not work on older processors without CPU AVX extension. Now there is no such restriction anymore.</li>
+      <li>New models: English to Lithuanian, Croatian to English, Latvian to English, Danish to English, Serbian to English,
+          Slovak to English, Bosnian to English, Vietnamese to English</li>
+      <li>Updated models: Lithuanian to English, Slovenian to English, Russian to English, Ukrainian to English</li>
+      </ul>
+      <p>Flatpak:</p>
+      <ul>
+      <li>New library: OpenVINO version 2024.1.0.15008</li>
+      <li>whisper.cpp update to version 1.6.2</li>
+      <li>CTranslate2 update to version 4.3.1</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.5.0" date="2024-05-05">
+      <description>
+      <p>User Interface:</p>
+      <ul>
+      <li>Import subtitles embedded into video file.
+          If your video file contains one or many subtitle streams, you can import the selected subtitles into notebook.</li>
+      <li>Support for more subtiles formats. You can import and export subtitles in SRT, WebVTT and ASS formats.</li>
+      <li>Unified file importing and exporting.
+          Text, subtitles, audio and video files can be imported or exported using unified menu bar option.</li>
+      <li>Settings option to enable/disable remembering the last note.
+          If the option is disabled, the last note will not be available after restarting the app.</li>
+      <li>Settings option for default action when importing note from a file.</li>
+      <li>Enhanced text editor font settings.
+          You can set the font family, style and size of the font used in the text editor.</li>
+      <li>Text to Text repair options.
+          With these options you can directly fix diacritical marks and punctuation in the text.</li>
+      <li>Text context menu with additional options: 'Read selection' and 'Translate selection'</li>
+      <li>New text appending style: 'After empty line'</li>
+      <li>System tray menu for changing active STT/TTS model</li>
+      <li>User friendly names for audio input devices</li>
+      <li>Simplified model filtering. It is now less flexible, but much easier to understand and use.</li>
+      <li>Speech Note has been translated into Ukrainian and Russian languages.</li>
+      <li>Fix: Cancellation was blocking the user interface.</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Updated 'Distil' model for English: 'Distil Large-v3'.
+          New model is enabled for WhisperCpp and FasterWhisper engines.</li>
+      <li>New Fine-Tuned WhisperCpp and FasterWhisper models for Slovenian and Polish.</li>
+      <li>Fix: Punctuation model could not be downloaded.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>WhisperSpeech engine that generates voice with exceptional naturalness.
+          The new engine comes with models for English and Polish languages. All models support voice cloning.</li>
+      <li>New voice cloning model for Vietnamese: 'viXTTS'</li>
+      <li>New Piper voices for English, Persian, Slovenian, Turkish, French and Spanish</li>
+      <li>New RHVoice voice for Czech</li>
+      <li>Settings option to enable/disable speech synchronization with subtitle timestamps.
+          This may be useful for creating voice overs.</li>
+      <li>Mixing speech with audio from an existing file.
+          When exporting to a file, you can overlay speech with audio from an existing media file.</li>
+      <li>Context menu option to read from cursor position or read only selected text</li>
+      <li>Speech audio is always normalized after TTS processing.</li>
+      <li>Fix: Mimic3 models could not be downloaded.</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: Greek to English, Maltese to English,
+          Slovenian to English, Turkish to English, English to Catalan</li>
+      <li>Updated models: Czech and Lithuanian</li>
+      <li>Handy buttons to quickly add translated text to the note, replace it and switch languages.</li>
+      <li>Context menu option to translate from cursor position or translate only selected text</li>
+      </ul>
+      <p>Accessibility:</p>
+      <ul>
+      <li>New 'Actions' for STT/TTS models switching: 'switch-to-next-stt-model', 'switch-to-prev-stt-model',
+          'switch-to-next-tts-model', 'switch-to-prev-tts-model', 'set-stt-model', 'set-tts-model'</li>
+      <li>New global keyboard shortcuts for STT/TTS models switching (X11 only): 'Switch to next STT model',
+          'Switch to prev STT model', 'Switch to next TTS model', 'Switch to prev TTS model'</li>
+      <li>Toggle option for keyboard shortcuts (X11 only). When 'Toggle behavior' is enabled,
+          Start listening/reading shortcuts will also stop listening/reading if they are triggered
+          while listening/reading is active.</li>
+      <li>Fix: Accented characters (e.g.: ã, ê) were not transferred correctly to the active window.</li>
+      </ul>
+      <p>Flatpak:</p>
+      <ul>
+      <li>Flatpak runtime update to version 5.15-23.08</li>
+      <li>PyTorch update to version 2.2.1</li>
+      <li>CTranslate2 update to version 4.2.1</li>
+      <li>Faster-Whisper update to version 1.0.2</li>
+      <li>New library: WhisperSpeech</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.4.0" date="2024-01-23">
+      <description>
+      <p>Flatpak:</p>
+      <ul>
+      <li>Modular Flatpak package.
+          The application package is divided into a base package 'Speech Note' (net.mkiol.SpeechNote) and
+          two optional add-ons: 'Speech Note AMD' (net.mkiol.SpeechNote.amd) and 'Speech Note NVIDIA' (net.mkiol.SpeechNote.nvidia).
+          Add-ons packages provide a set of libraries for GPU acceleration with AMD and NVIDIA graphics cards.
+          New "modular" approach makes the base Flatpak package much smaller.</li>
+      <li>NVIDIA CUDA runtime update to version 12.2</li>
+      <li>AMD ROCm runtime update to version 5.6</li>
+      <li>PyTorch update to version 2.1.1</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Improvements to the model browser.
+          You can check various model properties such as size, license, and the URLs from which the model is downloaded.</li>
+      <li>Model filtering options.
+          Models can be searched by various features such as: Processing speed, Quality, Additional capabilities.</li>
+      <li>Setting option to minimize to the system tray</li>
+      <li>Setting option to enable/disable including of recognized or read text in desktop notifications</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Marathi language. New language is enabled with WhisperCpp and FasterWhisper models.</li>
+      <li>New version of FasterWhisper Large model: 'FasterWhisper Large-v3'</li>
+      <li>New 'Distil' FasterWhisper models for English.
+          'Distil' models are potentially faster than regular models.</li>
+      <li>WhisperCpp and FasterWhisper enabled for Chinese-Cantonese language</li>
+      <li>Support for Speex audio codec in 'Transcribe a file'</li>
+      <li>Translate to English option for WhisperCpp and FasterWhisper models</li>
+      <li>More effective GPU acceleration for WhisperCpp models with AMD graphics cards</li>
+      <li>Subtitles generation</li>
+      <li>Support for multiple audio streams in a video file</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Marathi language. New language is enabled with Coqui MMS model.</li>
+      <li>Voice cloning with Coqui XTTS and YourTTS models.
+          Coqui XTTS models are enabled for: Arabic, Brazilian Portuguese, Chinese, Czech,
+          Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Russian,
+          Spanish and Turkish.
+          Coqui YourTTS model is enabled for: English, French and Brazilian Portuguese.</li>
+      <li>Voice samples creator.
+          A reference voice sample is used for voice cloning.
+          You can create voice sample with a microphone or from audio or video file.
+          The sample creator is available on main toolbar only if the selected TTS model
+          supports voice cloning.</li>
+      <li>New voices for Serbian and Uzbek languages (RHVoice models)</li>
+      <li>GPU acceleration for Coqui models with AMD graphics cards</li>
+      <li>Speech synchronized with subtitle timestamps (e.g. useful for voice overs)</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New model: Lithuanian to English</li>
+      <li>Option to force text cleaning before translation.
+          If the input text is incorrectly formatted, this option may improve the translation quality.</li>
+      <li>Text formatting support. The translation will preserve the formatting from the input text.
+          Supported formats are: HTML, Markdown and SRT Subtitles.</li>
+      <li>Translation progress indicator</li>
+      </ul>
+      <p>Other:</p>
+      <ul>
+      <li>Setting option to override GPU version (AMD graphics cards)</li>
+      <li>Setting option to limit number of simultaneous CPU threads</li>
+      <li>Setting option to set Python libraries directory (PYTHONPATH).
+          This option may be useful if you use 'venv' module to manage Python libraries.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.3.0" date="2023-11-12">
+      <description>
+      <p>Accessibility:</p>
+      <ul>
+      <li>Global keyboard shortcuts.
+          Shortcuts allow you to to start or stop listening and reading using keyboard.
+          Keyboard shortcuts function even when the application is not active
+          (e.g. minimized or in the background)</li>
+      <li>Support for 'Actions'. This feature allows external application to
+          invoke certain operation when Speech Note is running. An action can
+          be triggered via DBus call or with command-line option.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Desktop notifications. By default, when Speech Note is in the background,
+          desktop notifications are shown to indicate starting or ending of listening and reading.</li>
+      <li>Opening files with Drag and Drop gesture.</li>
+      <li>Speech speed control option has been moved to the main application window.</li>
+      <li>Fix: Application did not use native widgets on some platforms.</li>
+      </ul>
+      <p>Translator:</p>
+      <ul>
+      <li>New model: English to Hungarian</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>New languages: Afrikaans, Gujarati, Hausa, Telugu, Tswana, Javanese, Hebrew</li>
+      <li>New engine: 'Faster Whisper'. It provides slightly better performance comparing
+          to the existing engine for Whisper models, especially on bigger models like Medium or Large.</li>
+      <li>New engine: 'April-asr'. It supports intermediate results and punctuation (only English).
+          New engine comes with models for the following languages: English, French, Polish.</li>
+      <li>Inserting text to any active window. Using global keyboard shotcut or
+          'action' you can directly insert the decoded text into any window
+          which is currently in focus.</li>
+      <li>Copy text to the clipboard. Using global keyboard shotcut or
+          'action' the decoded text can be copied to the clipboard
+          instead of being inserted into the current note.</li>
+      <li>Stop listening button. Unlike Cancel, with this button you can stop listening but
+          the already recorded voice will be decoded into text.</li>
+      <li>Support for Opus audio codec in 'Transcribe a file'</li>
+      <li>More effective GPU acceleration for Whisper models. Average decoding time has been shortened by 3 times.</li>
+      <li>New Whisper models for English: 'Distil-Whisper Medium' and 'Distil-Whisper Large-v2'.
+          Both Distil models are faster than currently enabled 'Whisper Medium' and 'Whisper Large'.</li>
+      <li>New version of Whisper Large model: 'Whisper Large-v3'</li>
+      <li>Fix: CUDA acceleration for Whisper models did not work on NVIDIA graphic cards with Maxwell architecture.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>New languages: Afrikaans, Gujarati, Hausa, Telugu, Tswana, Javanese, Hebrew</li>
+      <li>New engine: 'Mimic 3' with voices for the following languages:
+          Afrikaans, Bengali, German, Greek, English, Spanish, Persian, Finnish,
+          French, Gujarati, Hausa, Hungarian, Italian, Javanese, Nepali, Dutch,
+          Polish, Russian, Swedish, Telugu, Tswana, Ukrainian, Yoruba.
+      </li>
+      <li>Reading text from the clipboard. Using global keyboard shotcut or
+          'action' you can directly read text that is in the clipboard.</li>
+      <li>New Piper voices for the following languages: Arabic, English, Hungarian,
+          Polish, Czech, German, Ukrainian, Vietnamese, Serbian, French, Spanish, Nepali.</li>
+      <li>More steps in the 'Speech speed' option. You can set speed from 0.1 to 2.0 values.</li>
+      <li>Diacritical marks restoration before speech synthesis for Arabic and Hebrew.</li>
+      <li>Support for GPU acceleration for 'Coqui' models.</li>
+      <li>Fix: Coqui Chinese MMS Hakka and Min Nan voices were broken.</li>
+      <li>Fix: Exporting to audio file was not possible when text was very long.</li>
+      </ul>
+      <p>Other:</p>
+      <ul>
+      <li>Setting option to disable support for certain graphic cards</li>
+      <li>Setting option 'Clear cache on close'</li>
+      <li>Cache compression. Temporary audio files are stored in Opus format instead of raw audio.
+          This significantly reduces the required disk space.</li>
+      <li>Detecting the availability of the optional features.
+          In the settings, you can check what optional features are available.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.2.1" date="2023-09-29">
+      <description>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Improved AMD GPU acceleration support for Whisper models.
+          Whisper GPU accelerator for AMD cards uses OpenCL interface.
+          OpenCL implementation shipped in Flatpak runtime 'Clover'
+          does not support new AMD cards.
+          To overcome this problem, Speech Note package provides another
+          implementation of OpenCL 'ROCm-OpenCL' which supports new AMD hardware.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.2.0" date="2023-09-24">
+      <description>
+      <p>Translator:</p>
+      <ul>
+      <li>New models: Hungarian to English, Finnish to English</li>
+      </ul>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Support for video files transcription. With 'Transcribe a file' menu option you can convert
+          audio file or audio from video file to text.
+          Following video formats are supported: MP4, MKV, Ogg.</li>
+      <li>Option 'Audio source' in 'Settings' to select preferred audio source. New option let you choose
+          microphone (or other audio source) which is used in Speech to Text.</li>
+      <li>Whisper engine update. Library behind Whisper engine (whisper.cpp) has been updated resulting in
+          an increase in performance. Processing time on CPU has been cut in half on average.</li>
+      <li>Improved Nvidia GPU acceleration support for Whisper models.
+          Following Whisper accelerators are currently enabled:
+          OpenCL (for most Nvidia cards, few AMD cards and Intel GPUs),
+          CUDA (for most Nvidia cards).
+          GPU hardware acceleration might not work well on your system, therefore is not enabled by default.
+          Use the option in 'Settings' to turn it on.
+          Disable, if you observe any problems when using Speech to Text with Whisper models.
+      </li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Save audio in compressed formats (MP3 or Ogg Vorbis). You can also save metadata tags
+          to the audio file, such as track number, title, artist or album.</li>
+      <li>Pause option. Note reading can be paused and resumed.</li>
+      <li>New models from Massively Multilingual Speech (MMS) project: Hungarian, Catalan, German,
+          Spanish, Romanian, Russian and Swedish.
+          If you would like any other MMS model to be included, please let us know.</li>
+      <li>Update of RHVoice voice for Uzbek.</li>
+      <li>Fix: Many Coqui models couldn't read the numbers or the reading wasn't correct.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Menu options: 'Open a text file' and 'Save to a text file'</li>
+      <li>Command line option to open files. If you want to associate text, audio or video files
+          with Speech Note, now it is possible. Your system may detect this new capability and
+          show Speech Note under 'Open With' menu in the file manager.
+          Please note that Flatpak app only has permission to access files in the following folders:
+          Desktop, Documents, Downloads, Music and Videos.</li>
+      <li>Improved UI colors when app is running under GNOME dark theme.</li>
+      <li>Advanced settings option 'Graphical style'. This option let you select any
+          Qt interface style installed in your system. Changing the style might make
+          app look better under GNOME.</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.1.0" date="2023-08-22">
+      <description>
+      <p>Speech to Text:</p>
+      <ul>
+      <li>Support for GPU acceleration for Whisper models.
+          If a suitable GPU device is found in the system, it will be used to accelerate processing.
+          This significantly reduces the time of decoding (usually 2 times or more).
+          GPU hardware acceleration is not enabled by default. Use the option in 'Settings' to turn it on.
+          Disable, if you observe any problems when using Speech to Text with Whisper models.
+      </li>
+      <li>Fix: Whisper model wasn't able to decode short speech sentences.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>Option 'Speech speed' in 'Settings' to make synthesized speech slower or faster.</li>
+      <li>New models from Massively Multilingual Speech (MMS) project.
+          MMS project released models for 1100 languages, but only the following have been enabled:
+          Albanian, Amharic, Arabic, Basque, Bengali, Bulgarian, Chinese, Greek, Hindi, Icelandic, Indonesian,
+          Kazakh, Korean, Latin, Latvian, Malay, Mongolian, Polish, Portuguese, Swahili, Tagalog, Tatar, Thai,
+          Turkish, Uzbek, Vietnamese and Yoruba.
+          If you would like any other MMS model to be included, please let us know.</li>
+      <li>New Coqui voices for: Japanese, Turkish and Spanish.</li>
+      <li>New Piper voices for: Czech, German, Hungarian, Portuguese, Slovak and English.</li>
+      <li>Update of RHVoice voices for Slovak and Czech.</li>
+      <li>Fix: Splitting text into sentences was incorrect for: Georgian, Japanese, Bengali, Nepali and Hindi.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>Option to change font size in text editor</li>
+      </ul>
+      </description>
+    </release>
+    <release version="4.0.0" date="2023-08-07">
+      <description>
+      <p>Translator:</p>
+      <ul>
+      <li>Support for offline translations between following languages: Catalan, Bulgarian, Czech, Danish
+      English, Spanish, German, Estonian, French, Italian, Polish, Portuguese, Norwegian, Iranian, Dutch,
+      Russian, Ukrainian, Icelandic.</li>
+      <li>Translator uses models that were created as part of Bergamot project.</li>
+      <li>To switch between Notepad and Translator modes, use the toggle buttons in the upper right corner.</li>
+      </ul>
+      <p>User Interface:</p>
+      <ul>
+      <li>User interface has been redesign. It is more handy and better supports portrait view for mobile.</li>
+      <li>Settings option to force specific interface style has been added. It is useful to overcome UI glitches when app is running under GNOME desktop environment.</li>
+      <li>Application has been translated to new languages: Dutch and Italian.</li>
+      </ul>
+      <p>Text to Speech:</p>
+      <ul>
+      <li>All existing Piper models have been updated.</li>
+      <li>New Piper voices for: English, Swedish, Turkish, Polish, German, Spanish, Finnish, French, Ukrainian, Russian,
+            Swahili, Serbian, Romanian, Luxembourgish and Georgian.</li>
+      <li>New RHVoice model for Slovak language</li>
+      </ul>
+      </description>
+    </release>
+    <release version="3.1.5" date="2023-07-06">
+      <description>
+        <p>Text to Speech:</p>
+        <ul>
+        <li>New Coqui voice for English: Jenny</li>
+        </ul>
+        <p>Speech to Text:</p>
+        <ul>
+        <li>Quicker decoding when using DeepSpeech/Coqui models (especially on ARM CPU)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.4" date="2023-07-03">
+      <description>
+        <p>User Interface:</p>
+        <ul>
+        <li>Option to show recent changes in the app (About -> Changes)</li>
+        <li>French translation update (Many thanks to L'Africain)</li>
+        </ul>
+        <p>Text to Speech:</p>
+        <ul>
+        <li>New Piper model for Chinese</li>
+        <li>New RHVoice model for Uzbek</li>
+        <li>Updated RHVoice models for Ukrainian</li>
+        <li>Piper and RHVoice engines updated to most recent versions</li>
+        </ul>
+        <p>Speech to Text:</p>
+        <ul>
+        <li>Whisper 'Large' models enabled for all languages</li>
+        <li>Whisper supported on older CPUs (i.e. without AVX/AVX2 extensions)</li>
+        <li>Whisper engine update (20% performance improvement, 50% less memory)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.3" date="2023-06-24">
+      <description>
+        <p>Text to Speech:</p>
+        <ul>
+        <li>New Piper models for: Icelandic, Swedish and Russian</li>
+        </ul>
+        <p>Speech to Text:</p>
+        <ul>
+        <li>Whisper fine-tuned models for: Czech, Slovak, Slovenian, Romanian, Russian, Hungarian and Polish</li>
+        <li>Standard Whisper models enabled also for:
+            Amharic, Arabic, Bengali, Danish, Estonian, Basque, Persian, Hindi,
+            Croatian, Hungarian, Icelandic, Georgian,
+            Kazakh, Korean, Lithuanian, Latvian, Mongolian,
+            Maltese, Nepali, Romanian, Slovak, Slovenian, Albanian,
+            Swahili, Tagalog, Tatar, Uzbek and Yoruba</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.2" date="2023-06-20">
+      <description>
+        <ul>
+        <li>Fix: Whisper STT didn't work for Chinese language</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.1" date="2023-06-17">
+      <description>
+        <ul>
+        <li>Text to Speech: New DeepSpeech model for Latvain</li>
+        <li>Minor UI improvements</li>
+        <li>Fix: Crash during Text to Speech on some systems</li>
+        <li>Fix: Downloaded models disappeared after app restart when Downloads directory was not set in the system</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.0" date="2023-06-13" />
+  </releases>
+</component>
