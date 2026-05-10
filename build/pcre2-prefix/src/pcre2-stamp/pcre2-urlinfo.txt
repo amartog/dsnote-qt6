@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pcre2-prefix/src/pcre2-stamp/download-pcre2.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pcre2-prefix/src/pcre2-stamp/verify-pcre2.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pcre2-prefix/src/pcre2-stamp/extract-pcre2.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/pcre2
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
+hash=SHA256=21547f3516120c75597e5b30a992e27a592a31950b5140e7b8bfde3f192033c4
+      no_extract=
+

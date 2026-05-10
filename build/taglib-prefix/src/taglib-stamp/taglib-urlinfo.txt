@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/taglib-prefix/src/taglib-stamp/download-taglib.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/taglib-prefix/src/taglib-stamp/verify-taglib.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/taglib-prefix/src/taglib-stamp/extract-taglib.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/taglib
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://taglib.org/releases/taglib-1.13.1.tar.gz
+hash=SHA256=c8da2b10f1bfec2cd7dbfcd33f4a2338db0765d851a50583d410bacf055cfd0b
+      no_extract=
+

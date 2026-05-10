@@ -1,0 +1,11 @@
+prefix=/
+exec_prefix=/
+libdir=/lib
+includedir=/include
+
+Name: fmt
+Description: A modern formatting library
+Version: 11.1.3
+Libs: -L${libdir} -lfmt
+Cflags: -I${includedir}
+

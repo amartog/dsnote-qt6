@@ -1,0 +1,14 @@
+# rnnoise installed pkg-config file
+
+prefix=/home/wanderer/Jobs/dsnote-qt6/build/external
+exec_prefix=${prefix}
+libdir=/home/wanderer/Jobs/dsnote-qt6/build/external/lib
+includedir=${prefix}/include
+
+Name: rnnoise-nu
+Description: RNN-based noise suppression, improved
+Version: 1.0
+Conflicts:
+Libs: -L${libdir} -lrnnoise-nu
+Libs.private: 
+Cflags: -I${includedir}/

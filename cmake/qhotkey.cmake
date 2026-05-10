@@ -18,7 +18,7 @@ ExternalProject_Add(qhotkey
     BUILD_ALWAYS False
 )
 
-find_package(Qt5 COMPONENTS X11Extras REQUIRED)
+find_package(Qt6 COMPONENTS X11Extras REQUIRED)
 
-list(APPEND deps_libs Qt5::X11Extras "${external_lib_dir}/libqhotkey.a")
+list(APPEND deps_libs Qt6::X11Extras "${external_lib_dir}/libqhotkey.a")
 list(APPEND deps qhotkey)

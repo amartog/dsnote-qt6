@@ -1,0 +1,164 @@
+/* Copyright (C) 2023-2024 Michal Kosciesza <michal@mkiol.net>
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+#include "espeak_engine.hpp"
+
+#include <fmt/format.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+#include <cstdlib>
+#include <fstream>
+#include <algorithm>
+
+#include "logger.hpp"
+
+espeak_engine::espeak_engine(config_t config, callbacks_t call_backs)
+    : tts_engine{std::move(config), std::move(call_backs)} {}
+
+espeak_engine::~espeak_engine() {
+    LOGD("espeak dtor");
+
+    stop();
+
+    espeak_Terminate();
+}
+
+bool espeak_engine::model_created() const { return m_ok; }
+
+void espeak_engine::create_model() {
+    if (m_config.speaker_id.empty()) {
+        LOGE("voice name missing");
+        return;
+    }
+
+    auto mb_voice = m_config.speaker_id.size() > 3 && m_config.speaker_id[0] == 'm' &&
+                    m_config.speaker_id[1] == 'b' && m_config.speaker_id[2] == '-';
+
+    if (mb_voice && !m_config.model_files.model_path.empty()) {
+        mkdir(fmt::format("{}/mbrola", m_config.data_dir).c_str(), 0777);
+
+        auto link_target = fmt::format("{}/mbrola/{}", m_config.data_dir,
+                                       &m_config.speaker_id[3]);
+        remove(link_target.c_str());
+
+        (void)symlink(m_config.model_files.model_path.c_str(),
+                      link_target.c_str());
+    }
+
+    m_sample_rate = espeak_Initialize(AUDIO_OUTPUT_SYNCHRONOUS, 0,
+                                      m_config.data_dir.c_str(), 0);
+
+    if (m_sample_rate == EE_INTERNAL_ERROR) {
+        LOGE("failed to init espeak");
+        return;
+    }
+
+    if (mb_voice) m_sample_rate = 16000;
+
+    m_ok = espeak_SetVoiceByName(m_config.speaker_id.c_str()) == EE_OK;
+
+    if (!m_ok)
+        LOGE("failed to create espeak voice");
+    else
+        LOGD("espeak voice created");
+}
+
+namespace {
+struct callback_data {
+    espeak_engine* engine = nullptr;
+    std::ofstream wav_file;
+};
+}  // namespace
+
+int espeak_engine::synth_callback(short* wav, int size, espeak_EVENT* event) {
+    auto cb_data = static_cast<callback_data*>(event->user_data);
+
+    if (wav == nullptr) {
+        LOGD("end of espeak synth");
+        return 0;
+    }
+
+    if (cb_data->engine->is_shutdown()) {
+        LOGD("end of espeak synth due to shutdown");
+        return 1;
+    }
+
+    cb_data->wav_file.write(reinterpret_cast<char*>(wav), size * sizeof(short));
+
+    return 0;
+}
+
+bool espeak_engine::model_supports_speed() const { return true; }
+
+bool espeak_engine::encode_speech_impl(const std::string& text,
+                                       unsigned int speed,
+                                       const std::string& out_file) {
+    auto rate = [speed]() {
+        auto default_rate = espeak_GetParameter(espeakRATE, 0);
+
+        if (speed < 1 || speed > 20 || speed == 10) {
+            return default_rate;
+        }
+
+        return std::clamp<int>(static_cast<float>(default_rate) *
+                                   (static_cast<float>(speed) / 10.0f),
+                               80, 450);
+    }();
+
+    espeak_SetParameter(espeakRATE, rate, 0);
+
+    callback_data cb_data{this, std::ofstream{out_file, std::ios::binary}};
+
+    espeak_SetSynthCallback(&synth_callback);
+
+    if (cb_data.wav_file.bad()) {
+        LOGE("failed to open file for writting: " << out_file);
+        return false;
+    }
+
+    cb_data.wav_file.seekp(sizeof(wav_header));
+
+    if (espeak_Synth(text.c_str(), text.size(), 0, POS_CHARACTER,
+                     espeakCHARS_AUTO, 0, nullptr, &cb_data) != EE_OK) {
+        LOGE("error in espeak synth");
+        cb_data.wav_file.close();
+        unlink(out_file.c_str());
+        return false;
+    }
+
+    if (espeak_Synchronize() != EE_OK) {
+        LOGE("error in espeak synchronize");
+        cb_data.wav_file.close();
+        unlink(out_file.c_str());
+        return false;
+    }
+
+    if (is_shutdown()) {
+        cb_data.wav_file.close();
+        unlink(out_file.c_str());
+        return false;
+    }
+
+    auto data_size = cb_data.wav_file.tellp();
+
+    if (data_size == sizeof(wav_header)) {
+        LOGE("no audio data");
+        cb_data.wav_file.close();
+        unlink(out_file.c_str());
+        return false;
+    }
+
+    cb_data.wav_file.seekp(0);
+
+    write_wav_header(m_sample_rate, sizeof(short), 1, data_size / sizeof(short),
+                     cb_data.wav_file);
+
+    LOGD("voice synthesized successfully");
+
+    return true;
+}

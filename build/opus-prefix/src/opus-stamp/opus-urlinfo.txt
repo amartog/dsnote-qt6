@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/opus-prefix/src/opus-stamp/download-opus.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/opus-prefix/src/opus-stamp/verify-opus.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/opus-prefix/src/opus-stamp/extract-opus.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/opus
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://downloads.xiph.org/releases/opus/opus-1.4.tar.gz
+hash=SHA256=c9b32b4253be5ae63d1ff16eea06b94b5f0f2951b7a02aceef58e3a3ce49c51f
+      no_extract=
+

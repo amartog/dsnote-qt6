@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/spdlog-prefix/src/spdlog-stamp/download-spdlog.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/spdlog-prefix/src/spdlog-stamp/verify-spdlog.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/spdlog-prefix/src/spdlog-stamp/extract-spdlog.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/spdlog
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/gabime/spdlog/archive/76fb40d95455f249bd70824ecfcae7a8f0930fa3.zip
+hash=SHA256=9a00dd50318b9467148adc5e822e55221c65d8d8794c6890ba034eed222dcf64
+      no_extract=
+

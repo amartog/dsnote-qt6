@@ -1,0 +1,21 @@
+# Build directories
+build-*/
+build_*
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+*.cmake
+
+# VSCode files
+.vscode/
+*.code-workspace
+
+# Backup files
+*.bak
+*.backup
+
+# Other
+.continue/
+pybind11.git/

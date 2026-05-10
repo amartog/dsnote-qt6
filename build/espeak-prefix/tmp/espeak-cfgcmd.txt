@@ -1,0 +1,1 @@
+cmd='cp;-r;--no-target-directory;<SOURCE_DIR>;<BINARY_DIR>;&&;<BINARY_DIR>/autogen.sh;&&;<BINARY_DIR>/configure;--prefix=<INSTALL_DIR>;--libdir=<INSTALL_DIR>/lib;--with-pic;--with-pcaudiolib=no;--with-sonic=no;--with-speechplayer=no;--with-mbrola=yes;--enable-static=yes;--enable-shared=yes;--with-extdict-ru;--enable-rpath=no'

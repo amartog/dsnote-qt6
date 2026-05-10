@@ -1,0 +1,2 @@
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/libvad.a
+/home/wanderer/Jobs/dsnote-qt6/build/external/include/webrtc_vad.h

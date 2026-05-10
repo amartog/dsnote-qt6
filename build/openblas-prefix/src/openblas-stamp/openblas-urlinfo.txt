@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/openblas-prefix/src/openblas-stamp/download-openblas.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/openblas-prefix/src/openblas-stamp/verify-openblas.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/openblas-prefix/src/openblas-stamp/extract-openblas.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/openblas
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.tar.gz
+hash=SHA256=38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
+      no_extract=
+

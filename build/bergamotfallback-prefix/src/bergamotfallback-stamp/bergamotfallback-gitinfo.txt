@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/bergamotfallback-prefix/tmp/bergamotfallback-gitclone.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/bergamotfallback
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+repository=https://github.com/browsermt/bergamot-translator.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=NEW
+      

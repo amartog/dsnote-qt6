@@ -1,0 +1,206 @@
+2012-12-06: version 0.9.5 release 2
+    - Python 3 port of the OpenOffice.org/LibreOffice extension for LibreOffice 4.0
+
+2012-10-09: version 0.9.5
+    - new modules: Latvian, Lithuanian
+    - bug fixes: Spanish, French, Portuguese
+    - Java sources
+
+2010-11-03: version 0.9.4
+    - data/vi_VN.sor: new Vietnamese module
+
+    - numbertext.jar: patch to set default UTF-8 encoding by Marcin Stępniak
+
+    - Russian module:
+      - fix for 2 (subunits of EUR, GBP, USD),
+      - add currency UAH, reports and patch by wasow at extensions ooo
+
+2010-08-03: version 0.9.3
+    - fix rounding difference of Calc and Numbertext functions
+    - Indonesian module by Eko Prasetiyo
+    - remove "zero subunit" from Moneytext outputs of Greek, English,
+      French, Spanish, Portuguese and Turkish modules.
+    - fix missing zero in Afrikaans, Swedish and Turkish Moneytext
+      descriptions.
+
+2010-06-07: version 0.9.2
+    - fix Russian module
+
+2010-05-28: version 0.9.1
+    - new module: English with Indian numbering system (en-IN)
+      (lakh = 100.000, crore = 10.000.000)
+
+    - other fixes (see Changelog)
+
+2010-05-20: version 0.9
+    - reference implementation for Swedish: 
+	- cardinal and ordinal numbers with gender
+	- ordinal abbreviations with gender
+	- year
+	- gender parameters at currencies
+
+    - reference implementation for Roman numerals:
+      Roman_2.sor: overlined with bars, also historical forms:
+
+      $ python soroside.py ../data/Roman_2.sor  38000
+
+      X̅X̅X̅V̅I̅I̅I̅
+
+      $ python soroside.py ../data/Roman_2.sor  30000000
+
+      |C̅C̅C̅|
+
+      $ python soroside.py ../data/Roman_2.sor -p historical 38000
+
+               ↂↂↂↁↀↀↀ
+
+2010-04-26: version 0.8.2
+    - fixes for Russian
+    - ordinal number support in Hebrew
+    - French translation
+
+2010-04-22: version 0.8.1
+    - bug fixes in Hebrew, Polish, Russian and Swedish modules
+
+    - ordinal numbers in French and Thai
+
+    - extended syntax in src/soroside.py tool (ranges with different steps):
+
+    $ python src/soroside.py data/en_US.sor 0-10~5
+    zero
+    five
+    ten
+
+2010-04-19: version 0.8
+    - new modules: he_HE from Alex Bodnaru, and hu_HU_2 (formal Hungarian)
+
+    - ordinal number functions in en_US, de_DE and hu_HU modules
+
+    - module fixes: th_TH, ru_RU
+
+    - new command line tool "soros.py", features:
+
+	- convert numbers and ranges:
+	    $ python src/soroside.py data/en_US.sor 1 5-7 10
+	    one
+	    five
+	    six
+	    seven
+	    ten
+	    
+	- prefix (function) support:
+	    $ python src/soroside.py -p ord2 data/en_US.sor 1-4
+	    1st
+	    2nd
+	    3rd
+	    4th
+	    
+	- file output:
+	    $ python src/soroside.py -o nums data/en_US.sor 100-200
+	    $ head -3 nums
+	    one hundred
+	    one hundred and one
+	    one hundred and two
+
+    - new convention: "help" item in some modules:
+	$ python src/soroside.py -o nums data/en_US.sor help
+	Functions:
+	 ord (ordinal numbers, eg. "first")
+	ord2 (ordinal abbreviations, eg. "1st")
+	Extra modules:
+	en_US_2 (subunit as decimal fraction: "USD 20.25" -> twenty and 25/100 dollars)
+
+    - bug fixes:
+	- default Western language in calls without language parameter in OOo
+	- fix output conversion of \$, \(, \) and \|
+	- fix boundary recognition in $n|$() (only $()|$() was good in the
+	  last versions)
+	- etc. (see ChangeLog)
+
+2009-11-13: version 0.7.1
+    - bug fixes (af_ZA, it_IT, nl_NL, th_TH), see ChangeLog
+
+2009-11-10: version 0.7
+    - new modules:
+      da-DK	Danish from László Németh
+      tr-TR	Turkish from Ramdem at OpenOffice.org Wiki
+
+    - bug fixes (see Changelog)
+
+2009-09-04: version 0.6.1
+    - fix English decimals
+
+2009-09-03: version 0.6
+    - new modules:
+      fr-BE	Belgian French from Olivier Ronez
+      fr-CH	Swiss French from Olivier Ronez
+      lb-LU	Luxenbourgish from Michel Weimerskirch
+      sh-RS	Serbian (Latin) from Goran Rakić 
+      sr-RS	Serbian (Cyrillic) from Goran Rakić 
+
+    - short language code (language code without country code) support
+      in language code argument of NUMBERTEXT and MONEYTEXT functions
+      
+    - using short language code (and an available module in the same
+      language) for missing language modules specified by long
+      language codes (language code + country code + optional variant name)
+
+    - fixes (see ChangeLog)
+
+2009-08-20: version 0.5
+    - new modules:
+      ja-JP	Japanese
+      ja-JP-2	Japanese (formal)
+      ko-KP	North-Korean
+      ko-KR	South-Korean
+      Hung	Old Hungarian Script
+
+    - web: add new modules and Chinese Suzhou numerals
+    
+    - fixes
+
+2009-08-10: version 0.4
+    - fixes
+
+2009-08-09: version 0.3
+    - NUMBERTEXT and MONEYTEXT specification 1.1
+
+    - new language modules:
+
+	- Africaans
+	- financial Chinese (simplified)
+        - Portuguese
+	- Brazilian Portuguese
+
+    - extended currency support for English, French and Spanish
+
+    - Improved OpenOffice.org extension:
+
+      - MS Excel (XLS) export-import support
+      - standard XCU resource file for localization
+    
+    - fixes
+    
+2009-07-25: version 0.2
+
+    - 11 new languages: Catalan, Czech, Finnish, French, Greek, 
+      Polish, Romanian, Russian, Slovenian, Spanish, Swedish.
+
+    - improved currency handling for all language modules
+
+    - new home page: http://NUMBERTEXT.org
+
+    - improved Soros language specification:
+	  - left zero deletion, trimming and removing double spaces
+	    switched on only by the new  __numbertext__ directive 
+	  - nested recursive calls
+	  - escaped metacharacters
+	  - optional semicolon, as command separator
+	  - in-line comments
+    
+    - new Python and JavaScript Soros interpreters, testing environment
+
+    - NOTE: the syntax of the NUMBERTEXT and MONEYTEXT will be changed
+      in the next version, according to the new NUMBERTEXT/MONEYTEXT
+      specification (a new second argument, the number of the decimal places
+      will be added). See in OpenOffice.org Issue 103746.

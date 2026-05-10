@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pybind11-prefix/src/pybind11-stamp/download-pybind11.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pybind11-prefix/src/pybind11-stamp/verify-pybind11.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/pybind11-prefix/src/pybind11-stamp/extract-pybind11.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/pybind11
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/pybind/pybind11/archive/refs/tags/v2.13.6.tar.gz
+hash=SHA256=e08cb87f4773da97fa7b5f035de8763abc656d87d5773e62f6da0587d1f0ec20
+      no_extract=
+

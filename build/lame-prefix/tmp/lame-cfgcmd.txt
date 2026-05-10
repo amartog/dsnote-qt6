@@ -1,0 +1,1 @@
+cmd='<SOURCE_DIR>/configure;--prefix=<INSTALL_DIR>;--bindir=<INSTALL_DIR>/bin;--libdir=<INSTALL_DIR>/lib;--enable-static=true;--enable-shared=false;--enable-nasm;--disable-decoder;--disable-analyzer-hooks;--disable-frontend;--with-pic=yes'

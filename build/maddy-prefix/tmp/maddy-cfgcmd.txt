@@ -1,0 +1,1 @@
+cmd='cp;-r;/home/wanderer/Jobs/dsnote-qt6/external/maddy/include/maddy;/home/wanderer/Jobs/dsnote-qt6/build/external/include/'

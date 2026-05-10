@@ -1,0 +1,2 @@
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/libsam_api.a
+/home/wanderer/Jobs/dsnote-qt6/build/external/include/sam_api.h

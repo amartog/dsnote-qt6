@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/libarchive-prefix/src/libarchive-stamp/download-libarchive.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/libarchive-prefix/src/libarchive-stamp/verify-libarchive.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/libarchive-prefix/src/libarchive-stamp/extract-libarchive.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/libarchive
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://libarchive.org/downloads/libarchive-3.6.2.tar.gz
+hash=MD5=b5b8efa8cba29396816d0dd5f61f3de3
+      no_extract=
+

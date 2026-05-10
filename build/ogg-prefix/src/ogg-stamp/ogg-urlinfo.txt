@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/ogg-prefix/src/ogg-stamp/download-ogg.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/ogg-prefix/src/ogg-stamp/verify-ogg.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/ogg-prefix/src/ogg-stamp/extract-ogg.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/ogg
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://downloads.xiph.org/releases/ogg/libogg-1.3.5.tar.xz
+hash=SHA256=c4d91be36fc8e54deae7575241e03f4211eb102afb3fc0775fbbc1b740016705
+      no_extract=
+

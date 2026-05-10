@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/rubberband-prefix/src/rubberband-stamp/download-rubberband.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/rubberband-prefix/src/rubberband-stamp/verify-rubberband.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/rubberband-prefix/src/rubberband-stamp/extract-rubberband.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/rubberband
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://breakfastquay.com/files/releases/rubberband-3.3.0.tar.bz2
+hash=SHA256=d9ef89e2b8ef9f85b13ac3c2faec30e20acf2c9f3a9c8c45ce637f2bc95e576c
+      no_extract=
+

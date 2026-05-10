@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/xz-prefix/src/xz-stamp/download-xz.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/xz-prefix/src/xz-stamp/verify-xz.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/xz-prefix/src/xz-stamp/extract-xz.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/xz
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://downloads.sourceforge.net/lzmautils/xz-5.4.2.tar.gz
+hash=MD5=4ac4e5da95aa8604a81e32079cb00d42
+      no_extract=
+

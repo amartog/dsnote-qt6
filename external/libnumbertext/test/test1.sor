@@ -1,0 +1,39 @@
+# line separators
+
+1 one; 2 two
+3 three
+
+# comments
+4 four # ;5 foo
+
+# boundary
+
+^5$ five
+^5 fif
+1(5) $1teen # fifteen
+
+^0$ zero
+1(0) ten$1 # ten
+
+8$ eight
+8 eigh
+1(8) $1teen # eighteen
+
+# back-references
+
+6 six
+7 seven
+9 nine
+
+1(4) $(4)teen	# recall with fix argument
+1(6) $(006)teen	# left-zero deletion
+1(7) $(\1)teen	# reference
+1(9) $1teen	# abbreviated form: $1 = $(\1)
+50   fifty
+(5)(\d)	$(\10)-$2	# $(\10) expanded to $(50)
+
+# conditional text
+
+2(\d) twenty[-$1] # twenty, twenty-one
+3([08]) thirty[-$(\1)] # thirty, thirty-eight
+4([05]) [$1und]fierzig # fierzig, fifundfierzig

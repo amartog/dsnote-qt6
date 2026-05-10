@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/vosk-prefix/src/vosk-stamp/download-vosk.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/vosk-prefix/src/vosk-stamp/verify-vosk.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/vosk-prefix/src/vosk-stamp/extract-vosk.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/vosk
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/alphacep/vosk-api/archive/128c216c6137a36fbf5b0bf64d03501e91a6eeaa.zip
+hash=MD5=1f716b8132d5678823db0531b2c8285a
+      no_extract=
+

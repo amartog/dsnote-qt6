@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/whispercppfallback-prefix/src/whispercppfallback-stamp/download-whispercppfallback.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/whispercppfallback-prefix/src/whispercppfallback-stamp/verify-whispercppfallback.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/whispercppfallback-prefix/src/whispercppfallback-stamp/extract-whispercppfallback.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/ggerganov/whisper.cpp/archive/refs/tags/v1.7.1.tar.gz
+hash=SHA256=97f19a32212f2f215e538ee37a16ff547aaebc54817bd8072034e02466ce6d55
+      no_extract=
+

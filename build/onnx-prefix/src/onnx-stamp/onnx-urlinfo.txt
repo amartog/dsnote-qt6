@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/onnx-prefix/src/onnx-stamp/download-onnx.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/onnx-prefix/src/onnx-stamp/verify-onnx.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/onnx-prefix/src/onnx-stamp/extract-onnx.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/onnx
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/microsoft/onnxruntime/releases/download/v1.16.1/onnxruntime-linux-x64-1.16.1.tgz
+hash=SHA256=53a0f03f71587ed602e99e82773132fc634b74c2d227316fbfd4bf67181e72ed
+      no_extract=
+

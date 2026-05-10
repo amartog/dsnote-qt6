@@ -1,0 +1,99 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/SettingsGeneralPage.qml</file>
+        <file>qml/SettingsUiPage.qml</file>
+        <file>qml/SettingsSttPage.qml</file>
+        <file>qml/SettingsTtsPage.qml</file>
+        <file>qml/SettingsAccessebilityPage.qml</file>
+        <file>qml/SettingsAdvancedPage.qml</file>
+        <file>qml/LangsPage.qml</file>
+        <file>qml/SpeechIndicator.qml</file>
+        <file>qml/PlaceholderLabel.qml</file>
+        <file>qml/PlaceholderLabelForLayout.qml</file>
+        <file>qml/MainToolBar.qml</file>
+        <file>qml/ToastNotification.qml</file>
+        <file>qml/SectionLabel.qml</file>
+        <file>qml/DialogPage.qml</file>
+        <file>qml/AboutPage.qml</file>
+        <file>qml/InfoItem.qml</file>
+        <file>qml/RichLabel.qml</file>
+        <file>qml/ChangelogPage.qml</file>
+        <file>qml/SpeechWidget.qml</file>
+        <file>qml/ComboButton.qml</file>
+        <file>qml/DuoComboButton.qml</file>
+        <file>qml/ScrollTextArea.qml</file>
+        <file>qml/Translator.qml</file>
+        <file>qml/Notepad.qml</file>
+        <file>qml/ExportFilePage.qml</file>
+        <file>qml/AddTextDialog.qml</file>
+        <file>qml/ModelInfoPage.qml</file>
+        <file>qml/ModelLicensePage.qml</file>
+        <file>qml/VoiceImportPage.qml</file>
+        <file>qml/VoiceMgmtPage.qml</file>
+        <file>qml/VoicePromptEditPage.qml</file>
+        <file>qml/ModelFeatureButton.qml</file>
+        <file>qml/ModelFilteringWidget.qml</file>
+        <file>qml/LangFilteringWidget.qml</file>
+        <file>qml/PackFilteringWidget.qml</file>
+        <file>qml/PairLabel.qml</file>
+        <file>qml/InlineMessage.qml</file>
+        <file>qml/StreamSelectionDialog.qml</file>
+        <file>qml/Dot.qml</file>
+        <file>qml/HorizontalLine.qml</file>
+        <file>qml/TextFieldForm.qml</file>
+        <file>qml/TextFieldComboForm.qml</file>
+        <file>qml/ComboBoxForm.qml</file>
+        <file>qml/TipMessage.qml</file>
+        <file>qml/SpinBoxForm.qml</file>
+        <file>qml/TextContextMenu.qml</file>
+        <file>qml/GpuComboBox.qml</file>
+        <file>qml/MainTipMessage.qml</file>
+        <file>qml/AddonInstallDialog.qml</file>
+        <file>qml/ShortcutForm.qml</file>
+        <file>qml/RuleMgmtPage.qml</file>
+        <file>qml/RuleEditPage.qml</file>
+        <file>qml/DoubleTextArea.qml</file>
+        <file>qml/HelpDialog.qml</file>
+        <file>qml/RowForm.qml</file>
+        <file>qml/TextFieldWithHelpForm.qml</file>
+        <file>qml/LayoutFixer.qml</file>
+        <file>qml/VoiceAudioSampleEditPage.qml</file>
+        <file alias="config/models.json">../config/models.json</file>
+        <file alias="nonbreaking_prefixes/ca.txt">../nonbreaking_prefixes/ca.txt</file>
+        <file alias="nonbreaking_prefixes/cs.txt">../nonbreaking_prefixes/cs.txt</file>
+        <file alias="nonbreaking_prefixes/da.txt">../nonbreaking_prefixes/da.txt</file>
+        <file alias="nonbreaking_prefixes/de.txt">../nonbreaking_prefixes/de.txt</file>
+        <file alias="nonbreaking_prefixes/el.txt">../nonbreaking_prefixes/el.txt</file>
+        <file alias="nonbreaking_prefixes/en.txt">../nonbreaking_prefixes/en.txt</file>
+        <file alias="nonbreaking_prefixes/es.txt">../nonbreaking_prefixes/es.txt</file>
+        <file alias="nonbreaking_prefixes/fi.txt">../nonbreaking_prefixes/fi.txt</file>
+        <file alias="nonbreaking_prefixes/fr.txt">../nonbreaking_prefixes/fr.txt</file>
+        <file alias="nonbreaking_prefixes/ga.txt">../nonbreaking_prefixes/ga.txt</file>
+        <file alias="nonbreaking_prefixes/hu.txt">../nonbreaking_prefixes/hu.txt</file>
+        <file alias="nonbreaking_prefixes/is.txt">../nonbreaking_prefixes/is.txt</file>
+        <file alias="nonbreaking_prefixes/it.txt">../nonbreaking_prefixes/it.txt</file>
+        <file alias="nonbreaking_prefixes/lt.txt">../nonbreaking_prefixes/lt.txt</file>
+        <file alias="nonbreaking_prefixes/lv.txt">../nonbreaking_prefixes/lv.txt</file>
+        <file alias="nonbreaking_prefixes/nl.txt">../nonbreaking_prefixes/nl.txt</file>
+        <file alias="nonbreaking_prefixes/no.txt">../nonbreaking_prefixes/no.txt</file>
+        <file alias="nonbreaking_prefixes/pl.txt">../nonbreaking_prefixes/pl.txt</file>
+        <file alias="nonbreaking_prefixes/pt.txt">../nonbreaking_prefixes/pt.txt</file>
+        <file alias="nonbreaking_prefixes/ro.txt">../nonbreaking_prefixes/ro.txt</file>
+        <file alias="nonbreaking_prefixes/ru.txt">../nonbreaking_prefixes/ru.txt</file>
+        <file alias="nonbreaking_prefixes/sk.txt">../nonbreaking_prefixes/sk.txt</file>
+        <file alias="nonbreaking_prefixes/sl.txt">../nonbreaking_prefixes/sl.txt</file>
+        <file alias="nonbreaking_prefixes/sv.txt">../nonbreaking_prefixes/sv.txt</file>
+        <file alias="nonbreaking_prefixes/ta.txt">../nonbreaking_prefixes/ta.txt</file>
+        <file alias="nonbreaking_prefixes/tr.txt">../nonbreaking_prefixes/tr.txt</file>
+        <file alias="app_icon.svg">icons/dsnote.svg</file>
+        <file alias="app_icon.png">icons/dsnote.png</file>
+        <file alias="speech_icon_0.png">icons/tray/dsnote_tray_speech_0.png</file>
+        <file alias="speech_icon_1.png">icons/tray/dsnote_tray_speech_1.png</file>
+        <file alias="busy_icon_0.png">icons/tray/dsnote_tray_busy_0.png</file>
+        <file alias="busy_icon_1.png">icons/tray/dsnote_tray_busy_1.png</file>
+        <file alias="pause_icon_0.png">icons/tray/dsnote_tray_pause_0.png</file>
+        <file alias="pause_icon_1.png">icons/tray/dsnote_tray_pause_1.png</file>
+    </qresource>
+</RCC>

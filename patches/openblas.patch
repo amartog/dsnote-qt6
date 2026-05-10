@@ -1,0 +1,13 @@
+--- a/lapack-netlib/SRC/sgees.c
++++ b/lapack-netlib/SRC/sgees.c
+@@ -35,6 +35,10 @@
+ #include "f2c.h"
+ #include "blaswrap.h"
+ 
++#ifdef select
++#undef select
++#endif
++
+ /* Table of constant values */
+ 
+ static integer c__1 = 1;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<description xmlns="http://openoffice.org/extensions/description/2006" 
+xmlns:d="http://openoffice.org/extensions/description/2006"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+    <display-name>
+        <name lang="en">NUMBERTEXT() and MONEYTEXT() Calc functions</name>
+        <name lang="de">NUMBERTEXT() und MONEYTEXT() Calc Funktions</name>
+        <name lang="es">Funciones NUMBERTEXT() y MONEYTEXT() para Calc</name>
+        <name lang="hu">NUMBERTEXT() és MONEYTEXT() Calc függvények</name>
+        <name lang="it">NUMBERTEXT() e MONEYTEXT() Calc funzione</name>
+        <name lang="pl">Funkcje NUMBERTEXT () i MONEYTEXT () dla programu Calc</name>
+        <name lang="ru">Функции NUMBERTEXT() и MONEYTEXT() для Calc</name>
+        <name lang="sr">NUMBERTEXT() и MONEYTEXT() функције за Рачун</name>
+        <name lang="sh">NUMBERTEXT() i MONEYTEXT() funkcije za Račun</name>
+        <name lang="he">NUMBERTEXT() וMONEYTEXT() פונקציות גליון Calc</name>
+        <name lang="bg">Функции NUMBERTEXT() и MONEYTEXT() за Calc</name>
+        <name lang="uk">Функції NUMBERTEXT() та MONEYTEXT() для Calc</name>
+    </display-name>
+<!--!echo "<version value=\"`head -1 VERSION`\" />"-->
+    <identifier value="org.numbertext-calc-addin" />
+    <publisher>
+        <name lang="en" xlink:href="http://NUMBERTEXT.org">NUMBERTEXT.org</name>
+    </publisher>
+    <platform value="all" />
+
+<dependencies>
+    <OpenOffice.org-minimal-version value="2.4" d:name="OpenOffice.org 2.4"/>
+</dependencies>
+
+</description>

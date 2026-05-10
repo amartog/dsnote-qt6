@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -fopenmp -o CMakeFiles/ggml.dir/ggml.c.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml.c",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml.c",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml.c.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -fopenmp -o CMakeFiles/ggml.dir/ggml-alloc.c.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-alloc.c",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-alloc.c",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu++11 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wno-format-truncation -Wextra-semi -fopenmp -o CMakeFiles/ggml.dir/ggml-backend.cpp.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-backend.cpp",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-backend.cpp",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -fopenmp -o CMakeFiles/ggml.dir/ggml-quants.c.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-quants.c",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-quants.c",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu++11 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wno-format-truncation -Wextra-semi -fopenmp -o CMakeFiles/ggml.dir/ggml-blas.cpp.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-blas.cpp",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-blas.cpp",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml-blas.cpp.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/ggml/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_BLAS -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/. -I/home/wanderer/Jobs/dsnote-qt6/build/external/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -fopenmp -o CMakeFiles/ggml.dir/ggml-aarch64.c.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-aarch64.c",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/ggml-aarch64.c",
+  "output": "ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o"
+},
+{
+  "directory": "/home/wanderer/Jobs/dsnote-qt6/build/external/whispercppfallback/src",
+  "command": "/usr/bin/c++ -DGGML_USE_BLAS -DWHISPER_BUILD -DWHISPER_SHARED -Dwhisper_fallback_EXPORTS -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/src/. -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/src/../include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/src/../ggml/include -I/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/ggml/src/../include -O3 -ffast-math -fno-finite-math-only -I/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas -O3 -DNDEBUG -fPIC -o CMakeFiles/whisper-fallback.dir/whisper.cpp.o -c /home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/src/whisper.cpp",
+  "file": "/home/wanderer/Jobs/dsnote-qt6/external/whispercppfallback/src/whisper.cpp",
+  "output": "src/CMakeFiles/whisper-fallback.dir/whisper.cpp.o"
+}
+]

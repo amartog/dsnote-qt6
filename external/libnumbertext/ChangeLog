@@ -1,0 +1,639 @@
+2022-11-13: 1.0.11 release:
+	* Soros.cxx/java/js/py: fix boundary inheritance of
+	  optional function (conditional text), reported by Juanma Sanchez
+	  and Antonio Bueno
+	* test/*, configure.ac, Makefile.am: add C++ unit testing
+	* Soros.cxx: fix an assert seen with in libreoffice crashtesting on
+	  an empty string, by Caolán McNamara
+
+	New modules:
+
+	* fa.sor: new Persian (Farsi) module by Amir Hossein Maher
+	* mul.sor: new module with note symbols for multiple languages
+
+	Module fixes and extensions:
+
+	* ca.sor: revert removing conditional text
+	* cs.sor: fix ordinals, cardinals, currencies by Stanislav Horáček,
+	  with help of Zdeněk Crhonek
+	* da.sor: revert removing conditional text
+	* en.sor: add extra currencies (BZF, DKK, ILS, LKR, ZMW, ZWD) for
+	  LibreOffice locales of Number Format dialog windows
+	* es.sor: add extra currencies (PAB, SVC, VED/VES) for LibreOffice,
+	  revert removing conditional text
+	* ga.sor: add currency support
+	* hu_Hung.sor: fix regression of transliteration of parenthesized words
+	  in LibreOffice, reported by Zoltán Óvári
+	* ro.sor: strip first space and remove double space in currency
+	* ru.sor: fix grammar of cents by Alex Ivanov
+	* sl.sor: fix cardinal-masculine and cardinal-neuter,
+	  reported by Martin Srebotnjak
+	* uk.sor: fix grammar of cents by Alex Ivanov
+
+	LibreOffice Calc add-on:
+
+	* CalcAddIn.xcu: new Russian translation by Evgeniy Kukhtinov
+
+2022-04-01: 1.0.10 release:
+	* hu_Hung.sor: fix regression of transliteration on Windows
+		- non-BMP characters aren't supported in bracket expressions in regex of MS Visual C++,
+		  resulting missing transliteration on Windows. Replaced by branches separated by |.
+
+2022-04-01: 1.0.9 release:
+	* hu_Hung.sor: fix regression of transliteration of punctuation marks
+
+2021-12-31: 1.0.8 release:
+	* src/Soros.py: fix FutureWarning: Possible nested set at position, reported by Rene Engelhard
+	* fr.sor:
+		- use hyphens instead of spaces, e.g. cent-deux, reported by "4560041" at GitHub
+		- new prefix "informal" for 1100–1900 (onze-cents - dix-neuf-cents)
+		- add prefix "feminine" and "masculine" (1 -> une/un), bug reports by arena94 at GitGub
+	* hu_Hung.sor:
+		- fix transliteration of old Hungarian family names, bug report by Zoltán Óvári
+		- fix 100–199, 1000–1999, 1000000–1999999 and 1000000000–1999999999 (bad ordering)
+		– fix conversion of single letters "í", "Í" and "NY";
+		- fix unnecessary conversion of words ending with "q", e.g. "IQ";
+		- fix unnecessary conversion of words not ending with unknown letters
+	* mr.sor: Marathi spelling corrections by Shantanu Oak
+	* pl.sor: fix ordinal 20-29, reported by Gabryha at GitHub
+	* uk.sor, CalcAddIn.xcu, description.xml.in: fix spell by Olexandr Nesterenko
+		- replace apostrophe symbol to U+02BC, reported by Volodymyr Lisivka
+		- up number to 10^42
+		- add cardinal, update help
+		- add uk locale
+	* zh.sor: add ordinal numbers, use always 二 for 2, reported by Ming-Hua
+
+2021-01-31: 1.0.7 release:
+	* ga.sor: new module Irish by László Németh
+	* lg.sor: new module Luganda by Phillip Samuel
+	* mr.sor: new module Marathi by Ankur Heramb Joshi
+	* mt.sor: new module Maltase by László Németh
+
+	* fi.sor: fix ordinal 0, bug report by Tuomas Hietala
+	* hu_Hung.sor:
+		- fix transliteration of Vörösmarty, bug report by Zoltán Óvári
+		- replace ü and ű by Viktor Kovács
+		- fix transliteration of dates with affixation
+	* th.sor: fix big (>999,999) numbers by Vladislav Kiper
+	* ua.sor: fix euro cent, bug report by Kty0mka
+
+2020-06-01: 1.0.6 release:
+	* Numbertext.cxx: don't depend on en_US.UTF-8 locale by Stephan Bergmann
+	* Java:
+		- clean-up by Balázs Meskó with Maven support
+		- port special logic for Norwegian language from C++ by Ilya Idamkin
+	* Makefile.am: prefix for datadir by Li-Wen Hsu
+	* bg.sor: avoid using \d and \D by Mihail Balabanov
+	* ee.sor: update Estonian language spellings by Alvar Laigna
+	* el.sor: fix "and" before currency fractions and "zero" in case of 0 whole euro by Spiros Evangelatos
+	* es.sor: fixes by Juanma Sanchez, and based on him report
+	* gl.sor, es.sor: fix ISO codename of Honduran lempira by Ilya Idamkin
+	* fr.sor: fix EUR 200, 300 etc., bug report by armik71
+	* hu.sor: fix date function for 1
+	* hu_Hung.sor:
+		- Old Hungarian transliteration support for words
+		- remove obsolete function left-to-right
+		- add sch -> s, ä -> é transliteration by Viktor Kovács
+	* it.sor: fix ordinal numbers, bug report by dario-gallucci
+	* ja.sor: fix word "negative" (负 -> 負), bug report by cmplstofB
+	* ko.sor, en.sor: fix Korean module and add Korean Won unit by DaeHyun Sun
+	* lv.sor: fix 40, 50 ... 90, bug report by andritis
+	* my.sor, en.sor: add Malay currency MYR by Bee Ing
+	* ru.sor, uk.sor: fix cardinal and feminine RUB, UAH usage by Alex Ivanov
+	* th.sor: fix usage of 1 by Ilya Idamkin and tyindeepit
+
+2018-10-09: 1.0.5 release:
+	* et.sor: new Estonian module
+	* Java: fix path separator for Windows by Rens Toonen
+	* spellout: fix DEFPATH in spellout by Rene Engelhard
+	* README: conversion to MarkDown by Miklós Vajna
+	* da.sor: fix "en million", bug report by Hsonesson1
+	* de.sor: add function year by c-kuehl
+	* eo.sor: fix ordinal-number, ie. "1-a" by Adolfo Jayme Barrientos
+	* fi.sor: fixed and more currencies by Tuomas Hietala
+	* lt.sor: fix ordinal numbers and currencies by Aurimas Fišeras
+	* pl.sor: fix ordinal numbers 4x, 7x, bug report by tengwar
+	* sq.sor: add missing 1000-9999
+
+2018-07-01: 1.0 release:
+	* libnumbertext:
+	- load Bokmål (nb) and Nynorsk (nn) from no.sor
+	- code clean-up by Miklós Vajna
+	- enable-boost option by Tomáš Chvátal
+	- keep CXXFLAGS configurable, bug report by Stephan Bergmann
+	* data:
+	- 4(+1) new language modules and several fixes
+	* gl.sor: new Galician module by Adrian Chaves
+	* no.sor: new Norwegian Bokmål and Nynorsk modules
+	* sq.sor: new Albanian module
+	* uk.sor: new Ukrainian module based on Russian
+	* ca.sor: fix ordinal indicators
+	* da.sor: remove double spaces in money amounts
+	* es.sor: use plural for 0 (in currency) by Adrian Chaves
+	* fi.sor: fix currency names and large cardinals by Tuomas Hietala
+	* hu.sor: various suffixation + spell out + article support with
+	  numbers, references and date names for new NatNum12 number format
+	  modifier of LibreOffice, for example, extending default date formats.
+	* ru.sor: fix ordinal-neuter
+	* tr.sor: add ordinal numbers
+	* web:
+	- add "Functions (help)" menu item to show help of the modules
+
+2018-05-28: beta 3 release:
+	* src: numbertext renamed to spellout
+	* libnumbertext: fix cppcheck warnings by Julien Nabet
+	* java: add -encoding utf8 to javac call by Rene Engelhard
+	* LO extension: default capitalization, missing capitalization
+	          was reported by TileStonePro
+	* bg.sor: new Bulgarian module by Mihail Balabanov
+	* cs.sor: fix for ordinal numbers, bug report by Stanislav Horáček
+	* hu.sor: add number, letter, day and month affixation
+	          for extended number, cross reference and date formats
+	* is.sor: new Icelandic module by László Németh
+	* it.sor: add missing groups in ordinal numbers,
+	          the problem was reported by Valter Mura
+	* lt.sor: fix typo, correct ordinal-number,
+	          problem was reported by Modestas Rimkus
+	* ru.sor: ordinal numbers and fixes by Mike Kaganski
+	* sl.sor: ordinals, also genders and adverbials,
+	          using also information by Martin Srebotnjak
+	* sv.sor: fix typos
+	* zh.sor: real native Simplified Chinese expressions by Suokunlong
+	* *.xcu:
+	  - Bulgarian translation by Mihail Balabanov
+	  - Spanish translation by Adolfo Jayme Barrientos
+	  - fix typo by Rene Engelhard
+	* web:
+	  - fix typo by Adolfo Jayme Barrientos
+	  - add Bulgarian and Icelandic modules
+
+2018-04-26: László Németh (nemeth numbertext org):
+	* rename numbertext executable to spellout,
+	  add default data path: /usr/share/numbertext
+	  and support environmental variable NUMBERTEXTPATH
+	* fix platform incompabilities
+	* Greek cardinal and ordinal genders
+
+2018-04-19: László Németh (nemeth numbertext org):
+	* Soros programming language: revised draft:
+	- conditional text, prefix macros, language
+	  variant program lines
+	* improved interpreters
+	* C++11 port
+	* language data:
+	- More functions:
+	  ordinal numbers (prefix: ordinal)
+	  ordinal indicator (prefix: ordinal-number)
+	  year (prefix: year)
+	  gender variants and other functions
+	- list all functions of a module with the input "help"
+	  (in Calc: =NUMBERTEXT("help"), but enlarge the
+	   row height to see every line of the help text)
+	- new Malaysian and Swiss Standard German
+	- compressed language modules:
+	- instead of hu_HU_2, ja_JP_2, zh_ZH_2,
+	  "formal" prefix allows formal number names here.
+	  For example, MONEYTEXT(1200;"money HUF";"hu")
+	  results "egyezerkettőszáz forint" instead of
+	  "ezerkétszáz forint",
+	  MONEYTEXT(123;"formal";"ja") results "参百弐拾壱"
+	  instead of "三百二十一"
+	- instead of en_US_2, use "money" prefix combined
+	  with currencies, eg. MONEYTEXT(1.01;"money USD")
+	  results "one and 1/100 U.S. dollar" in LibreOffice
+	  instead of "one U.S. dollar and one cent".
+
+2016-05-24: Liudas Ališauskas
+	* Fix Lithuanian module
+
+2014-05-10: Mihovil Stanić (mihovil.stanic gmail com):
+	* new Croatian module
+
+2013-03-16: Jerzy Moruś
+	* Polish translation of LibO extension resource data
+
+2012-12-06: László Németh (nemeth numbertext org):
+        * src/Soros.py, soroside.py, __init__.py, test.py:
+          Python 3 port (back compatible with Python 2)
+        * reg.uno.py, bin/*.py: initial patches for tabulator
+          inconsistency and terminating whitespaces in Python 3
+          reported by Julien2412 at libreoffice-dev.
+
+2012-10-09: László Németh (nemeth numbertext org):
+	* data/lt_LT.sor: Lithuanian module (hints by Mantas Kriaučiūnas
+	  and Laimonas Vėbra (laimis) at LaunchPad #936205)
+
+	* data/fr_*: fix un/une + currency, based on the patch by
+	  Jmzambon at OOO Wiki
+
+	* data/es_ES.sor: euro: y dos cents -> con dos céntimos, reported by
+	  mike8p at launchpad.net
+
+	* data/pt_*.sor: ciento(s) -> cento(s), reported by Gwenaël Quenette
+	  (sent by Zoltán Reizinger and Andrea Pescetti).
+
+	* java/: sources of the Java jar distribution
+
+2012-03-17: Asterisks at OOo Wiki:
+	* data/lv_LV.sor: Latvian module
+
+2010-11-03: László Németh (nemeth numbertext org):
+	* data/vi_VN.sor: new Vietnamese module
+	* data/ru_RU.sor:
+	- fix for 2 (subunits of EUR, GBP, USD),
+	- add currency UAH, reports and patch by wasow at extensions ooo
+
+2010-08-03: László Németh (nemeth numbertext org):
+	* pythonpath/org/Numbertext/__init__.py: fix rounding differences
+	  between Calc and Numbertext functions: rounding by Calc round()
+	  in Python code of Numbertext. The problem was reported by
+	  Bernard Marcelly on Numbertext OOo Wiki page.
+	
+	* data/{el,en,es,fr,pt,tr}*.sor, : remove "zero cents" etc. from
+	  Moneytext output, reported by Bernard Marcelly.
+
+	* data/{af,sv,tr}*.sor: add missing zero to Moneytext (eg. "nul rand")
+
+2010-08-03: Eko Prasetiyo (ekoprasetiyo at gmail):
+	* data/id_ID.sor: Indonesian module
+
+2010-06-07: László Németh (nemeth numbertext org):
+	* data/ru_RU.sor: fix bad back references in Russian rules. Missing
+	  conversion reported by Birioukoff at OOo Extension site.
+
+2010-05-28: László Németh (nemeth numbertext org):
+	* data/en_IN.sor: Indian numbering system. Lakh = 100.000, crore =
+	  10.000.000 (requested by Dhandip at OOo Extensions site).
+
+	* data/ca_ES.sor: fix Catalan MONEYTEXT in Calc Numbertext extension
+	  (Launchpad bug 585782 reported by Bernard Marcelly).
+
+	* data/en_US.sor, hu_HU.sor: fix 0th
+
+	* data/sv_SE.sor: fix 0th, 100th, 1000th
+
+	* data/fr_*.sor: fix ordinal numbers
+
+	* doc/*odt: modifications: DollarText/BAHTTEXT field formatters of
+	  MS Office and ECMA-376, Unicode CLDR, corrections for RBNF,
+	  BSD license for example Python and Java interpreters
+
+2010-05-20: László Németh (nemeth numbertext org):
+	* data/sv_SE.sor:
+	- fix 30 (trettio)
+	- reference implementation with grammar and year support,
+	  also with gender parameters for currencies. Gender problem
+	  with currencies reported by Kent Karlsson in CLDR ticket 2783
+
+	* data/Roman.sor:
+	- replaced with the more compact Roman_2.sor
+	- replace "(" and ")" with "\(" and "\)" (parenthesized numerals)
+
+	* data/Roman_2.sor:
+	- variant with overline and bars
+	- extra functions: historical with the special Unicode characters for
+	  1000, 5000 and 10000
+
+	* src/Soros.js:
+	- fix character encoding for \(, \) etc.
+
+2010-04-26: László Németh (nemeth numbertext org):
+	* data/fr_*: ordf and ordm instead of ord-fem and ord-mas
+
+	* data/ru_RU.sor: fix bugs reported by georgepyh on OOo Extension site
+
+	* description.xml, CalcAddIn.xcu: add French translation by
+	  Bernard Marcelly.
+
+	* data/he_IL.sor: [^0] -> [1-9], modify function names for MONEYTEXT
+	
+	* src/soroside.py: rename soros.py, suggested by Alex Bodnaru
+
+2010-04-26: Alex Bodnaru (alexbodn at 012 dot net dot il):
+	* data/he_IL.sor:
+	- add ordinal numbers (ord, ordf, ordm functions)
+	- restructuring currencies, etc.
+
+2010-04-22: László Németh (nemeth numbertext org):
+	* data/sv_SE.sor: fix Swedish 11000 (elvatusen instead of elvausen)
+	
+	* data/{he_IL,pl_PL,ru_RU}.sor: replace the complementer bracket
+	  expressions (eg. [^1]) to non-complementers (eg. [02-9]). The
+	  problem with the Polish Moneytext reported by geo78 at OOo Extensions.
+
+	* src/soros.py: extended syntax: range with steps by tilde (0-100~10)
+
+	* data/fr_FR.sor: add ordinal numbers (ord, ord-fem, ord-mas):
+	=MONEYTEXT(5;"ord";"fr") -> cinquième
+	=MONEYTEXT(1;"ord-fem";"fr") -> première
+	=MONEYTEXT(1;"ord-mas";"fr") -> premier
+
+	* data/th_TH.sor: add ordinal numbers (ord)
+
+2010-04-19: László Németh (nemeth numbertext org):
+	* pythonpath/org/__init__.py:
+	- remove Asian and CTL lang. detection temporarily (problems with
+	  document language detection in OOo 3.0 reported by Petr Mladek and
+	  mrw at OOo Extension site);
+	
+	- now MONEYTEXT handles unknown currency codes/new function names.
+	
+	  Example:
+	
+	  = MONEYTEXT(num, "ord", "en") -> ordinal names
+	  = MONEYTEXT(num, "ord2", "en") -> ordinal abbreviations (1st, 2nd etc.)
+
+	Problems with unknown currency codes reported by Bernard Marcelly.
+
+	* src/Soros.{py,js}: fix broken $n|$ = $n||$ equivalence (it worked only
+	  for parenthesized form: $(...)|$... = $(...)||$...)
+
+	* src/Soros.py: fix output encoding of \$, \(, \), \|
+
+	* data/{de_DE, hu_HU, hu_HU_2}.sor:
+	- function ord for ordinal numbers
+	- function help for help
+
+	* data/{en_US, en_US_2}.sor:
+	- function ord for ordinal numbers
+	- function ord2 for ordinal abbreaviations (1st, 2nd, 3rd, 4th etc.)
+	- function help for help
+
+	* data/hu_HU_2.sor: formal Hungarian rules (eg. egyezeregyszáz)
+
+	* data/ru_RU.sor: grammatical fixes for Russian money amounts
+	  (problems reported by rogerclc on OOo extension site):
+	– for numbers ending in 1 that are not 'teens':
+	   (1, 21, 31, 41, 101, 121, etc.): roubles = рубль; kopeks = копейка
+	– for all numbers ending in 1 in the kopeks column (.01, .21, etc):
+	  one = одна, eg.
+	  21.00 = двадцать один *рубль*
+	  21.01 = двадцать один *рубль одна* копейка
+	  21.21 = двадцать один *рубль* двадцать *одна копейка*
+
+	* data/th_TH.sor: fix number 1 in 201, 5001 etc.
+	  1 is เอ็ด in all numbers greater than 1 (หนึ่ง).
+	  This is an old Excel bug revived in OOo, too (see OOo Issue 83490),
+	  reported by Supapong at OOo Numbertext Wiki.
+
+	* data/fr_*.sor: add XPF (franc Pacifique), missing monetary
+	  unit reported by Bernard Marcelly.
+
+	* src/places.py: add RON, problem with the new Romanian monetary unit
+	  reported by Bernard Marcelly.
+
+2010-04-13: Alex Bodnaru (alexbodn at 012 dot net dot il):
+	* data/he_IL.sor: Hebrew module
+
+	* Makefile(s): add better clean
+
+2009-11-13: László Németh (nemeth numbertext org):
+	* data/{af_ZA,it_IT,nl_NL}.sor: fix bad conversion of
+	  1 subunit of currencies. The bug in the Italian module reported by
+	  Nicolas Pagni (Nicolas dot Pagni at npagni dot it)
+
+	* data/sv_SE.sor: the Swedish 7 is "sju", not *sjo,
+	  reported by Stephan Nilsson (Stephan at Nilsson dot tf)
+
+2009-11-11: Tantai Thanakanok (tantai osdev co th):
+	* data/th_TH.sor: extended Thai decimal support for 1 and
+	  more than 2 digits with currencies
+
+2009-11-10: László Németh (nemeth numbertext org):
+	* data/da_DK.sor: new Danish module
+
+	* data/ca_ES.sor, es_ES.sor, fr_*.sor: 0 euro (without plural),
+	  reported by Bernard Marcelly
+
+	* data/sv_SE.sor: fix bad language code (*sv_SV.sor) and missing
+	  plural form of krone. Reported by Bernard Marcelly.
+
+	* data/fr_*.sor: "moins" for negative. Reported by Bernard
+	  Marcelly.
+
+	* data/tr_TR.sor: add space removing, fix large numbers
+
+	* src/Soros.{py,js}: replace bad [^0] pattern with [1-9] in the
+	  __numbertext__ directive implementation. Missing decimals leading by
+	  zero reported by Bernard Marcelly.
+	* doc/sorosspec.odt: replace bad [^0] pattern with [1-9].
+
+2009-09-25: Susana Sotelo Docío (Roebek at OpenOffice.org Wiki):
+	* data/es_ES.sor: gender fix for numbers containing the string "ientos"
+	  (doscientos/as, quinientos/as, novecientos/as, etc)
+
+2009-09-12: Ramdem at OpenOffice.org Wiki:
+	* data/tr_TR.sor: new Turkish module
+
+2009-09-06: Joan Montané:
+	* data/ca_ES.sor: fixes
+	- "1000-1999" must be spelled only "mil ...", it can't be spelled "un mil" (the same fixed French bug)
+	- decimal units for EUR changed from "cent" to "cèntim", as it's usual and accepted
+	- decimal units for USD changed form "cent" to "centau", as it's usual and accepted
+	- millions are spelled as in French:
+	  EUR 1000000 --> un milió d'euros (note the " de/d' " preposition")
+	  EUR 1000001 --> un milió un euros (it lacks " de/d' " preposition).
+	  EUR 1000000,xx --> un milió d'euros amb xx cèntims
+	  EUR 1000001,xx --> un milió un euros amb xx cèntims
+
+	Improvements:
+	- Added all the currencies replaced by EUR
+	- Added all the actives code beginning by A (I'm working in B-Z)
+	- Added some actives codes beginning by X
+
+2009-09-04: László Németh (nemeth numbertext org):
+	* data/en_US*: fix English decimal conversion by replacing bad [^0]
+	  (matched decimal separators, too) with "[1-9]", reported by
+	  Bernard Marcelly (bmarcelly at openoffice dot org).
+
+2009-09-03: László Németh (nemeth numbertext org):
+	* pythonpath/org/Numbertext/__init__.py: add short language name support:
+	  now module names works without country code or with bad or non-available
+	  country and variant codes, too. The missing support of short languages
+	  was reported by Eduardo Moreno, too.
+
+	* Makefile: target "ooo" for OOo extensions, first used in ooo-build
+	  integration by Kálmán Szalai.
+	
+	* ca_ES.sor, es_ES.sor, pt_PT.sor, pt_BR.sor, ro_RO.sor: add gender
+          support,
+	- ca_ES and es_ES bug fixes, reported by Joan Montané
+	- ro_RO bug fixes, reported by Lucian Adrian Grijincu
+
+	* data/af_ZA.sor, nl_NL.sor: extended decimal support, reported by
+	  Friedel Wolff (friedel at translate dot org dot za)
+
+	* data/fr_FR.sor: bug fixes:
+
+	- extended and fixed decimal support, reported by
+	  Bernard Marcelly (bmarcelly at openoffice dot org)
+
+	- using "et" instead of "y", reported by Bernard Marcelly and xhydrogene
+	  at launchpad dot net (https://bugs.launchpad.net/numbertext/+bug/421151)
+
+	- virgule instead of comma, reported by Bernand Marcelly and xhydrogene
+	  at launchpad dot net: https://bugs.launchpad.net/numbertext/+bug/421148,
+	  also patch by Olivier Ronez
+
+	- cent and mille instead of un cent and un mille, reported by Bernand Marcelly and xhydrogene
+	  at launchpad dot net: https://bugs.launchpad.net/numbertext/+bug/421164,
+	  also patch by Olivier Ronez
+
+	* data/fr_CH.sor: decimal point instead of comma, reported by
+	  Bernard Marcelly (bmarcelly at openoffice dot org)
+
+	* data/pl_PL.sor: add affix function and portable regexes, fix
+	  regex problem reported by Marcin Miłkowski
+
+2009-08-30: Michel Weimerskirch (michel at weimerskirch dot net):
+	* data/lb_LU.sor: new Luxembourgish module
+
+2009-08-29 Marcin Miłkowski (milek_pl at o2 dot pl):
+	* data/pl_PL.sor: patch for Polish
+	  https://bugs.launchpad.net/numbertext/+bug/421031
+
+2009-08-28: Goran Rakić (grakic at devbase dot net):
+	* CalcAddIn.xcu, description.xml: add Serbian localizations
+
+	* data/sh_RS.sor, data/sr_RS: new Serbian modules
+
+2009-08-27: Olivier Ronez:
+
+	* data/fr_BE.sor, data/fr_CH: patches for new modules
+
+	* data/fr_FR.aff: other patches:
+	- milliarde -> milliards (reported by Sophie Gautier and
+	  Bernand Marcelly, too)
+	- fix for 81
+
+2009-08-27: Joan Montané (jmontane at openoffice dot org):
+
+	- data/ca_ES.sor: fixes
+	
+	http://wiki.services.openoffice.org/wiki/Talk:NUMBERTEXT/MONEYTEXT_development#Some_fixes_on_Catalan_definition):
+		- "amb" instead of "und"
+		- "cèntim" instead of (euro)cent
+		- "menys" for negative
+
+2009-08-20: László Németh (nemeth numbertext org):
+	* data/ko*, ja*, Hang.sor: Korean, Japanese and Old Hungarian modules.
+
+	* data/en_US.*, hu_HU.sor: optimized by separator functions.
+
+	* web/webroot/Hung.ttf: TrueType font with Old Hungarian numbers and
+	  some letters for the native name of the script (ROVÁSÍRÁS)
+
+	* web/*: new section (old number systems)
+
+	* data/it_IT.sor: Using "virgola" for comma, reported by
+	  Attilafdd at launchpad.net.
+
+2009-08-10: László Németh (nemeth numbertext org):
+	* pythonpath/org/Numbertext/__init__.py: add missing Numbertext module
+	
+	* bin/locales.py: fix registration of the first language module
+
+	* data/af_ZA.py: fix helper functions (space handling)
+
+2009-08-09: László Németh (nemeth numbertext org):
+	* numbertext.py: new namespace (incompatible with previous versions):
+	  ORG.NUMBERTEXT.NUMBERTEXT() and ORG.NUMBERTEXT.MONEYTEXT(),
+	  suggested by Eike Rathke (er at OOo).
+
+	* CalcAddIn.xcu: standard resource files for settings and
+	  localizations (see Jan Holst Jensen's excellent Add-in example and
+	  documentation: http://biochemfusion.com/doc/Calc_addin_howto.html)
+
+	* CalcAddIn.xcu: add compatibility names: working XLS export-import
+          (XLS portability bug reported by Mushtaque Asghar).
+
+	* numbertext.py: now NUMBERTEXT() has no default rounding:
+
+        =NUMBERTEXT(4.12345) -> four dot one two three four five
+        =NUMBERTEXT(4.00) -> four
+        =NUMBERTEXT("4.00") -> four dot zero zero
+
+	* numbertext.py: MONEYTEXT() supports not integer decimal places:
+	=MONEYTEXT(1.8, "MGA") -> one ariary and *four* iraimbilanja
+
+	* src/places.py: add MGA, MRO with decimal place 0.7
+	(eg. one ariary = 5 iraimbilanja, decimal places = 0.7 in places.py)
+
+	* doc/numbertext.odt: NUMBERTEXT specification 1.1:
+        - remove decimal place argument
+
+	* doc/sorosspec.odt:
+	- add number to Devanagari number example to the Soros specification;
+	- add Python implementation
+
+	* data/pt_PT.sor: Portuguese
+	- initial version from Eduardo Moreno (emoreno tokonhu com):
+          "Nombres en portugues de los números, con ayuda de Flavia Viegas".
+	- extension:
+	  - simplification
+	  - long scale support
+	  - syntax of "e" based on Portuguese test data of PERL::Lingua Words2Nums
+	  - extended with currency names of Portuguese speaking countries
+
+	* data/pt_BR.sor: Brazilian Portuguese
+	- based on pt-PT, but Brazilian Portuguese uses short scale numbers
+	  and different ortography (number 16, 17, 19).
+
+	* data/af_ZA.sor: Africaans
+	- the orthography based on Bruce C. Donaldson: A grammar of Africaans,
+	  MOUTON DE GRUYTER, 1993
+
+	* data/zh_ZH_2.sor: Simplified financial Chinese module.
+
+	* data/fr_FR.sor, data/en_US*.sor, data/es_ES.sor:
+	
+	- extended currency names for English, French and Spanish modules
+
+	* data/*: - fixes for language data:
+
+	- Romanian, Swedish, Slovenian, Czech, etc.: fix decimals (.0n)
+
+        - Greek: removing unnecessary "de"
+
+        - Spanish: 21 (veintidós) -> 22, negativa - -> menos,
+          reported by Eduardo Moreno (emoreno tokonhu com).
+
+	- Italian: unucento -> cento, reported also by Claudio Colombo.
+
+	- Esperanto: unudek -> dek, unucent -> cent, miliono -> unu miliono.
+
+	* tests/test0*: test number 1-1000 in all languages (see make check).
+
+	* web/*: fix for IE, etc.
+
+2009-07-25: László Németh (nemeth numbertext org):
+	* data/*.sor: 11 new languages (see README)
+	- syntax and orthography based mostly on Wikipedia articles
+	- for Greek numerals, see Harry Foundalis' excellent introduction
+	  (http://www.foundalis.com/lan/grknum.htm)
+	
+	* numbertext.py: handling language variants (eg. en-US-2
+	  for USD 20.25 -> twenty and 25/100 dollars)
+
+	* doc/sorosspec.odt: improved Soros language specification.
+
+	* Soros.js, pythonpath/Soros.py: standard Soros modules
+	  in Python and JavaScript
+
+	* bin/*.py: new conversion utilities and more readable format using
+	  standard Python doc string of the numbertext language modules.
+
+	* numbertext.py: fix for language codes without country ("eo", "Roman")
+
+	* data/*.sor: add function-like currency handling for language modules
+
+	* es_ES.sor: fix for Spanish "... y uno mil" -> "... y un mil".
+	  The bug reported by Eduardo Moreno (emoreno tokonhu com).
+
+	* Roman*.sor: handle arbitrary large Roman numbers: 1000000000 -> ((M))
+
+	* test/*: testing environment and tests
+
+	* web/: web pages of http://numbertext.org
+	
+	* bin/shellhtml: preprocessor tool for HTML, XML data

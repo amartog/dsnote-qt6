@@ -1,0 +1,11 @@
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/libopenblas.so.0.3
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/libopenblas.so.0
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/libopenblas.so
+/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas/openblas_config.h
+/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas/f77blas.h
+/home/wanderer/Jobs/dsnote-qt6/build/external/include/openblas/cblas.h
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/pkgconfig/openblas.pc
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/cmake/OpenBLAS/OpenBLASConfig.cmake
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/cmake/OpenBLAS/OpenBLASConfigVersion.cmake
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/cmake/OpenBLAS/OpenBLASTargets.cmake
+/home/wanderer/Jobs/dsnote-qt6/build/external/lib/cmake/OpenBLAS/OpenBLASTargets-release.cmake

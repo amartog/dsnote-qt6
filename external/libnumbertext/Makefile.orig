@@ -1,0 +1,25 @@
+all:
+	cd pythonpath; make
+	cat description.xml.in | bin/shellhtml >description.xml
+	cd web; make
+	cp src/Soros.py web/webroot
+	cp src/Soros.js web/webroot
+	cp doc/*.pdf web/webroot
+
+distx:
+	cd web; make clean
+	cd test; make clean
+	tar c . | gzip > ../numbertext-`head -1 VERSION`.tar.gz
+
+lo:
+	make -f Makefile.orig
+	zip -r numbertext-`head -1 VERSION`.oxt META-INF rdb idl pythonpath pkg-desc *.xcu *py *xml README.md
+
+check:
+	cd test; make
+
+clean:
+	rm -f *.oxt description.xml
+	cd pythonpath; make clean
+	cd web; make clean
+	rm -f *~ */*~

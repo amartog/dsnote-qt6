@@ -1,0 +1,13 @@
+Add/test a new language module
+
+1. Create a new module using Soros tutorial and IDE in https://numbertext.github.io/Soros.html.
+
+2. Put it in the data/ subdirectory under the name of your locale to test it
+   in command line tool src/spellout, see section "Build C++11" in README.md or
+   test as a LibreOffice extension, see Section "Build and using LibreOffice Extension"
+   in README.md.
+
+   OR test it in LibreOffice by putting the module in the share/numbertext/ subdirectory
+   of an installation of a recent LibreOffice distribution, see http://www.libreoffice.org.
+
+3. Create an issue or pull request in https://github.com/Numbertext/libnumbertext

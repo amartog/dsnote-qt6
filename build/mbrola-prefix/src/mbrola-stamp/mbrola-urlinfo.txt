@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/mbrola-prefix/src/mbrola-stamp/download-mbrola.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/mbrola-prefix/src/mbrola-stamp/verify-mbrola.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/mbrola-prefix/src/mbrola-stamp/extract-mbrola.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/mbrola
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/numediart/MBROLA/archive/bf17e9e1416a647979ac683657a536e8ca5d880e.zip
+hash=SHA256=5a7c02a926dc48ab6d1af0e4c8ab53fc191a7e4337de6df57b6706e140fa3087
+      no_extract=
+

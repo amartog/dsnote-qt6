@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/sam-prefix/src/sam-stamp/download-sam.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/sam-prefix/src/sam-stamp/verify-sam.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/wanderer/Jobs/dsnote-qt6/build/sam-prefix/src/sam-stamp/extract-sam.cmake
+source_dir=/home/wanderer/Jobs/dsnote-qt6/external/sam
+work_dir=/home/wanderer/Jobs/dsnote-qt6/external
+url(s)=https://github.com/s-macke/SAM/archive/a7b36efac730957b59471a42a45fd779f94d77dd.zip
+hash=SHA256=342e245c84b14945b33dd8b272373eee517d239c612763ec01d3fa3bbee6bcb1
+      no_extract=
+

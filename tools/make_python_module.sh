@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 out_dir="$1"
 out_file="$2"

@@ -1,0 +1,1 @@
+cmd='cp;-r;--no-target-directory;<SOURCE_DIR>;<BINARY_DIR>;&&;autoreconf;-i;&&;<BINARY_DIR>/configure;--prefix=<INSTALL_DIR>;--libdir=<INSTALL_DIR>/lib;--enable-shared=false;--enable-static=true;--with-pic=yes'
